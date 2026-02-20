@@ -1,9 +1,94 @@
-[gd_scene format=3 uid="uid://qw3swkb63er8"]
+[gd_scene load_steps=4 format=3 uid="uid://qw3swkb63er8"]
 
-[node name="InputSettings" type="Control"]
+[ext_resource type="FontFile" uid="uid://ccfjfp4hfprry" path="res://Assets/Font/karmatic-arcade/ka1.ttf" id="1_8sf25"]
+[ext_resource type="PackedScene" uid="uid://cmkigadclkeav" path="res://InputSettings/select_player_button.tscn" id="1_tf80a"]
+[ext_resource type="Texture2D" uid="uid://vcdb8ghvv1jx" path="res://Assets/Background/menu_bg.jpg" id="2_tf80a"]
+
+[node name="PlayerCharacterSelect" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="PlayerSelect1" type="VBoxContainer" parent="."]
+top_level = true
+custom_minimum_size = Vector2(500, 600)
+layout_mode = 0
+offset_left = 117.0
+offset_top = 136.0
+offset_right = 799.0
+offset_bottom = 936.0
+alignment = 1
+
+[node name="PlayerButton" parent="PlayerSelect1" instance=ExtResource("1_tf80a")]
+layout_mode = 2
+
+[node name="PlayerSelect2" type="VBoxContainer" parent="."]
+top_level = true
+custom_minimum_size = Vector2(500, 600)
+layout_mode = 0
+offset_left = 1127.0
+offset_top = 136.0
+offset_right = 1809.0
+offset_bottom = 936.0
+alignment = 1
+
+[node name="PlayerButton" parent="PlayerSelect2" instance=ExtResource("1_tf80a")]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -965.0
+offset_top = -536.0
+offset_right = 971.0
+offset_bottom = 535.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_tf80a")
+expand_mode = 1
+
+[node name="OrText" type="Label" parent="."]
+layout_mode = 0
+offset_left = 735.0
+offset_top = 379.0
+offset_right = 1157.0
+offset_bottom = 728.0
+theme_override_fonts/font = ExtResource("1_8sf25")
+theme_override_font_sizes/font_size = 140
+text = "OR"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ChooseaCat" type="Label" parent="."]
+layout_mode = 0
+offset_left = 299.0
+offset_top = -112.0
+offset_right = 1595.0
+offset_bottom = 237.0
+theme_override_fonts/font = ExtResource("1_8sf25")
+theme_override_font_sizes/font_size = 80
+text = "Choose a Cat"
+horizontal_alignment = 1
+vertical_alignment = 1
