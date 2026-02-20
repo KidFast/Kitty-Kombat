@@ -4,12 +4,14 @@
 [ext_resource type="Texture2D" uid="uid://b8k437bct7u50" path="res://icon.svg" id="2_wvm36"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_glklx"]
+size = Vector2(129, 127)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_glklx")
 player_number = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(64.5, 65.5)
 shape = SubResource("RectangleShape2D_glklx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

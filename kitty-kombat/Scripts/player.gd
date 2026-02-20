@@ -9,11 +9,11 @@ func get_input():
 	var input_direction
 	input_direction = Input.get_vector("p%s_left" % [player_number], "p%s_right" % [player_number], "p%s_up" % [player_number], "p%s_down" % [player_number])
 	
-	velocity = input_direction * speed
+	velocity.x = input_direction.x * speed
 
 func _physics_process(delta):
 	if not is_on_floor():
-		velocity += get_gravity() * delta
+		velocity.y += get_gravity().y * delta
 	
 	get_input()
 	move_and_slide()
