@@ -1,7 +1,9 @@
 extends CharacterBody2D
 
 @export var speed = 400
-@export var player_number : int 
+@export var player_number : int
+
+const jump_velocity = -400 
 
 func get_input():
 	var input_direction
@@ -13,5 +15,8 @@ func get_input():
 	velocity = input_direction * speed
 
 func _physics_process(delta):
-		get_input()
-		move_and_slide()
+	if not is_on_floor():
+		velocity += get_gravity() * delta
+	
+	get_input()
+	move_and_slide()
