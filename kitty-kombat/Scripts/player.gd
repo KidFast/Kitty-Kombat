@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+#movement variables
 @export var speed = 400
 @export var dash_speed = 1400
 @export var player_number : int
@@ -10,6 +11,13 @@ var dash_direction = Vector2(1,0)
 var can_dash = true
 var dashing = false
 
+#fight variables
+var health = 100
+var light_attack_dmg = 5
+var heavy_attack_dmg = 15
+
+
+#dash mechanic
 func dash():
 	if dashing:
 		return
@@ -30,8 +38,9 @@ func dash():
 		await get_tree().create_timer(0.2).timeout
 		dashing = false
 	
+#getting movement input
 func get_input():
-	if dashing:
+	if dashing:			#doesn't accept input while dashing
 		return
 	
 	var input_direction
