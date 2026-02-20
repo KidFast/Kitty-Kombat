@@ -14,6 +14,7 @@ config/name="Kitty-Kombat"
 run/main_scene="uid://blhb0uvwniq2g"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 
 [input]
@@ -60,3 +61,11 @@ p2_down={
 }
 =======
 >>>>>>> b993ce1157a7031b5e5adcb4297fb2945abea4b3
+=======
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=3
+>>>>>>> Stashed changes
