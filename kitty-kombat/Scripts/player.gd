@@ -1,11 +1,39 @@
 extends CharacterBody2D
 
 @export var speed = 400
+@export var dash_speed = 1400
 @export var player_number : int
 
-const jump_velocity = -400 
+const jump_velocity = -400
 
+var dash_direction = Vector2(1,0)
+var can_dash = true
+var dashing = false
+
+func dash():
+	if dashing:
+		return
+	
+	if is_on_floor():
+		can_dash = true
+	
+	if Input.is_action_pressed("p%s_left" % [player_number]):
+		dash_direction = Vector2(-1,0)
+	
+	if Input.is_action_pressed("p%s_right" % [player_number]):
+		dash_direction = Vector2(1,0)
+	
+	if Input.is_action_just_pressed("p%s_dash" % [player_number]) and can_dash:
+		velocity = dash_direction * dash_speed
+		can_dash = false
+		dashing = true
+		await get_tree().create_timer(0.2).timeout
+		dashing = false
+	
 func get_input():
+	if dashing:
+		return
+	
 	var input_direction
 	input_direction = Input.get_vector("p%s_left" % [player_number], "p%s_right" % [player_number], "p%s_up" % [player_number], "p%s_down" % [player_number])
 	
@@ -18,5 +46,6 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("p%s_up" % [player_number]) and is_on_floor():
 		velocity.y = jump_velocity
 	
+	dash()
 	get_input()
 	move_and_slide()

@@ -16,7 +16,7 @@ position = Vector2(557, 407)
 player_number = 2
 
 [node name="platform" type="StaticBody2D" parent="."]
-position = Vector2(383, 735)
+position = Vector2(383, 733)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="platform"]
 position = Vector2(476.5, 54)
