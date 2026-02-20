@@ -15,5 +15,8 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += get_gravity().y * delta
 	
+	if Input.is_action_just_pressed("p%s_up" % [player_number]) and is_on_floor():
+		velocity.y = jump_velocity
+	
 	get_input()
 	move_and_slide()
