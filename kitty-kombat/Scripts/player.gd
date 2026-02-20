@@ -5,10 +5,7 @@ extends CharacterBody2D
 
 func get_input():
 	var input_direction
-	if(player_number == 1):
-		input_direction = Input.get_vector("p1_left", "p1_right", "p1_up", "p1_down")
-	elif(player_number == 2):
-		input_direction = Input.get_vector("p2_left", "p2_right", "p2_up", "p2_down")
+	input_direction = Input.get_vector("p%s_left" % [player_number], "p%s_right" % [player_number], "p%s_up" % [player_number], "p%s_down" % [player_number])
 	
 	velocity = input_direction * speed
 
