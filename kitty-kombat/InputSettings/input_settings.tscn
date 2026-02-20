@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://qw3swkb63er8"]
+[gd_scene load_steps=5 format=3 uid="uid://qw3swkb63er8"]
 
 [ext_resource type="FontFile" uid="uid://ccfjfp4hfprry" path="res://Assets/Font/karmatic-arcade/ka1.ttf" id="1_8sf25"]
+[ext_resource type="Script" uid="uid://drltc8wlq2cya" path="res://InputSettings/playerSelect.gd" id="1_sk4ta"]
 [ext_resource type="PackedScene" uid="uid://cmkigadclkeav" path="res://InputSettings/select_player_button.tscn" id="1_tf80a"]
 [ext_resource type="Texture2D" uid="uid://vcdb8ghvv1jx" path="res://Assets/Background/menu_bg.jpg" id="2_tf80a"]
 
@@ -11,32 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="PlayerSelect1" type="VBoxContainer" parent="."]
-top_level = true
-custom_minimum_size = Vector2(500, 600)
-layout_mode = 0
-offset_left = 117.0
-offset_top = 136.0
-offset_right = 799.0
-offset_bottom = 936.0
-alignment = 1
-
-[node name="PlayerButton" parent="PlayerSelect1" instance=ExtResource("1_tf80a")]
-layout_mode = 2
-
-[node name="PlayerSelect2" type="VBoxContainer" parent="."]
-top_level = true
-custom_minimum_size = Vector2(500, 600)
-layout_mode = 0
-offset_left = 1127.0
-offset_top = 136.0
-offset_right = 1809.0
-offset_bottom = 936.0
-alignment = 1
-
-[node name="PlayerButton" parent="PlayerSelect2" instance=ExtResource("1_tf80a")]
-layout_mode = 2
+script = ExtResource("1_sk4ta")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -52,6 +28,30 @@ theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
+
+[node name="OptionList" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="PlayerSelect1" type="VBoxContainer" parent="PanelContainer/MarginContainer/OptionList"]
+top_level = true
+custom_minimum_size = Vector2(500, 600)
+layout_mode = 2
+alignment = 1
+
+[node name="PlayerButton1" parent="PanelContainer/MarginContainer/OptionList/PlayerSelect1" instance=ExtResource("1_tf80a")]
+layout_mode = 2
+
+[node name="PlayerLabel" parent="PanelContainer/MarginContainer/OptionList/PlayerSelect1/PlayerButton1/MarginContainer/HBoxContainer" index="0"]
+text = "Nerd Cat"
+
+[node name="PlayerSelect2" type="VBoxContainer" parent="PanelContainer/MarginContainer/OptionList"]
+top_level = true
+custom_minimum_size = Vector2(500, 600)
+layout_mode = 2
+alignment = 1
+
+[node name="PlayerButton1" parent="PanelContainer/MarginContainer/OptionList/PlayerSelect2" instance=ExtResource("1_tf80a")]
+layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -92,3 +92,6 @@ theme_override_font_sizes/font_size = 80
 text = "Choose a Cat"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[editable path="PanelContainer/MarginContainer/OptionList/PlayerSelect1/PlayerButton1"]
+[editable path="PanelContainer/MarginContainer/OptionList/PlayerSelect2/PlayerButton1"]
