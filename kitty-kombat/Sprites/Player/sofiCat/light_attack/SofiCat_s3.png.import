@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://buxua5nb1xgjv"
-path="res://.godot/imported/sofi_walking_left.png-cec8f8e08933542dc45a07a2fad7a4aa.ctex"
+uid="uid://oekldwpam57i"
+path="res://.godot/imported/SofiCat_s3.png-8573b01918f9adffaf4de588426d0a6e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Player/sofiCat/walking/sofi_walking_left.png"
-dest_files=["res://.godot/imported/sofi_walking_left.png-cec8f8e08933542dc45a07a2fad7a4aa.ctex"]
+source_file="res://Sprites/Player/sofiCat/light_attack/SofiCat_s3.png"
+dest_files=["res://.godot/imported/SofiCat_s3.png-8573b01918f9adffaf4de588426d0a6e.ctex"]
 
 [params]
 
