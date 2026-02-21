@@ -1,31 +1,71 @@
 extends Control
 
-@onready var PlayerButton_Scene = preload("res://InputSettings/input_settings.tscn")
-@onready var option_list = $PanelContainer/MarginContainer/OptionList
-# Called when the node enters the scene tree for the first time.
-var is_selected = false
+var characters = ["NerdCat", "SofiCat"]
 
+var p1_selection := 0
+var p2_selection := 0
+
+var p1_confirmed := false
+var p2_confirmed := false
+
+@onready var OptionList = OptionList
+@onready var option_buttons = OptionList.get_children()
+
+@onready var p1_highlight = $P1Highlight
+@onready var p2_highlight = $P2Highlight
+@onready var p1_ready_label = $P1ReadyLabel
+@onready var p2_ready_label = $P2ReadyLabel
 
 func _ready():
-	_create_player_list()
+		assert(option_buttons.size() == characters.size())
+		update_visuals()
+
+func _process(delta):
 	
-func _create_player_list():
-	InputMap.load_from_project_settings()
-	for item in option_list.get_children():
-			item.queue_free()
+	if not p1_confirmed:
+		if Input.is_action_just_pressed("p1_left"):
+			p1_selection = wrapi(p1_selection - 1, 0, characters.size())
+			update_visuals()
+		elif Input.is_action_just_pressed("p1_right"):
+			p1_selection = wrapi(p1_selection + 1, 0, characters.size())
+			update_visuals()
+		elif Input.is_action_just_pressed("p1_light_attack"):
+			p1_confirmed = true
+			update_visuals()
+		elif Input.is_action_just_pressed("p1_heavy_attack"):
+			p1_confirmed = false
+			update_visuals()
 			
-	for option in InputMap.get_actions():
-		var button = PlayerButton_Scene.instantiate()
-		var option_label = button.find_child("PlayerLabel")
-		
-		option_label.text = option
-		
-		var events = InputMap.action_get_events(option)
-		if events.size() > 0:
-			option_label.text = events[0].as_text()
-		else:
-			option_label.text = ""
+	if not p2_confirmed:
+		if Input.is_action_just_pressed("p2_left"):
+			p2_selection = wrapi(p1_selection - 1, 0, characters.size())
+			update_visuals()
+		elif Input.is_action_just_pressed("p2_right"):
+			p2_selection = wrapi(p1_selection + 1, 0, characters.size())
+			update_visuals()
+		elif Input.is_action_just_pressed("p2_light_attack"):
+			p2_confirmed = true
+			update_visuals()
+		elif Input.is_action_just_pressed("p2_heavy_attack"):
+			p2_confirmed = false
+			update_visuals()
 			
-		player_list.add_child(button)
+			
 		
+func update_visuals():
+	
+	if option_buttons.size() > 0:
+		var p1_button = option_buttons[p1_selection]
+		var p2_button = option_buttons[p2_selection]
+		
+		p1_highlight.global_position = p1_button.global_position
+		p2_highlight.global_position = p2_button.global_position
+		
+		p1_highlight.size = p1_button.size
+		p2_highlight.size = p2_button.size
+		
+		if p1_ready_label:
+			p1_ready_label.visible = p1_confirmed
+			p2_ready_label.visible = p2_confirmed
+	
 	
