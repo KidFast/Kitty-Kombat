@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://ca1p7ngmt8e4c"]
+[gd_scene load_steps=5 format=3 uid="uid://ca1p7ngmt8e4c"]
 
 [ext_resource type="PackedScene" uid="uid://blhb0uvwniq2g" path="res://Scenes/sofiCat.tscn" id="1_xjjte"]
+[ext_resource type="PackedScene" uid="uid://b8anspv0t678k" path="res://Scenes/toluCar_health_bar.tscn" id="2_pm723"]
+[ext_resource type="PackedScene" uid="uid://bohkjx7pcatip" path="res://Scenes/sofiCat_health_bar.tscn" id="3_70u62"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xjjte"]
 size = Vector2(508.88205, 374.00275)
@@ -9,10 +11,12 @@ size = Vector2(508.88205, 374.00275)
 
 [node name="p1" parent="." instance=ExtResource("1_xjjte")]
 position = Vector2(925, 111)
+scale = Vector2(0.47999758, 0.44000024)
 player_number = 1
 
 [node name="p2" parent="." instance=ExtResource("1_xjjte")]
 position = Vector2(409, 109)
+scale = Vector2(0.49142206, 0.44000018)
 player_number = 2
 
 [node name="platform" type="StaticBody2D" parent="."]
@@ -26,3 +30,7 @@ shape = SubResource("RectangleShape2D_xjjte")
 [node name="ColorRect" type="ColorRect" parent="platform"]
 offset_right = 953.0
 offset_bottom = 108.0
+
+[node name="HealthBars2" parent="." instance=ExtResource("2_pm723")]
+
+[node name="HealthBars" parent="." instance=ExtResource("3_70u62")]

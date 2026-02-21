@@ -7,7 +7,7 @@ extends CharacterBody2D
 @export var speed = 400
 @export var dash_speed = 1400
 
-const jump_velocity = -1800
+const jump_velocity = -1200
 
 var dash_direction = Vector2(1,0)
 var can_dash = true

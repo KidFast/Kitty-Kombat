@@ -1,0 +1,86 @@
+[gd_scene load_steps=5 format=3 uid="uid://bohkjx7pcatip"]
+
+[ext_resource type="Texture2D" uid="uid://bn8pdhcdu2sh4" path="res://Sprites/Player/sofiCat/light_attack/SofiCat_s1.png" id="1_ohu2k"]
+
+[sub_resource type="Theme" id="Theme_1fs3a"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nsa0s"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qgc16"]
+bg_color = Color(0.62642264, 0.09191673, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="HealthBars" type="Node2D"]
+
+[node name="background" type="ColorRect" parent="."]
+offset_right = 761.0
+offset_bottom = 212.0
+theme = SubResource("Theme_1fs3a")
+color = Color(0.89411765, 0.8509804, 0.84705883, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="health_bar" type="ProgressBar" parent="."]
+offset_left = 15.0
+offset_top = 146.0
+offset_right = 471.0
+offset_bottom = 192.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/background = SubResource("StyleBoxFlat_nsa0s")
+theme_override_styles/fill = SubResource("StyleBoxFlat_qgc16")
+value = 100.0
+metadata/_edit_use_anchors_ = true
+
+[node name="health_label" type="Label" parent="."]
+offset_left = 20.0
+offset_top = 104.0
+offset_right = 133.0
+offset_bottom = 149.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Health"
+metadata/_edit_use_anchors_ = true
+
+[node name="sofiCat_label" type="Label" parent="."]
+offset_left = 17.0
+offset_top = 6.0
+offset_right = 255.0
+offset_bottom = 96.0
+theme_override_colors/font_color = Color(0.71210915, 0.21447513, 0.39120293, 1)
+theme_override_font_sizes/font_size = 65
+text = "Sofi Cat"
+metadata/_edit_use_anchors_ = true
+
+[node name="background2" type="ColorRect" parent="."]
+offset_left = 523.0
+offset_top = 16.0
+offset_right = 713.0
+offset_bottom = 193.0
+theme = SubResource("Theme_1fs3a")
+color = Color(0.9019608, 0.8117647, 0.77254903, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="background3" type="ColorRect" parent="."]
+offset_left = 539.0
+offset_top = 25.0
+offset_right = 697.0
+offset_bottom = 183.0
+theme = SubResource("Theme_1fs3a")
+color = Color(0.8627451, 0.69803923, 0.6901961, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 559.0
+offset_top = 34.0
+offset_right = 672.0
+offset_bottom = 181.0
+texture = ExtResource("1_ohu2k")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
