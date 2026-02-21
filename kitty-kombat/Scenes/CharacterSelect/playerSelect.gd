@@ -71,6 +71,7 @@ func update_visuals():
 			p2_ready_label.visible = p2_confirmed
 			
 func start_game():
-	
+	GameData.p1_character = characters[p1_selection]
+	GameData.p2_character = characters[p2_selection]
 	get_tree().change_scene_to_file("res://your_game_scene.tscn")
 	
