@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @export var player_number : int
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var health_bar : ProgressBar = $health_bar
 
 #movement variables
 @export var speed = 400
@@ -22,6 +23,8 @@ var heavy_attack_dmg = 15
 
 func _ready():
 	animated_sprite.animation_finished.connect(_on_animation_finished)
+	
+	health_bar.init_health(health)
 
 func _on_animation_finished():
 	if animated_sprite.animation in ["light_attack", "heavy_attack"]:
