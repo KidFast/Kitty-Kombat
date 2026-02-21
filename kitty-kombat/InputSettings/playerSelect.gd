@@ -8,7 +8,7 @@ var p2_selection := 0
 var p1_confirmed := false
 var p2_confirmed := false
 
-@onready var OptionList = OptionList
+@onready var OptionList = $OptionList
 @onready var option_buttons = OptionList.get_children()
 
 @onready var p1_highlight = $P1Highlight
