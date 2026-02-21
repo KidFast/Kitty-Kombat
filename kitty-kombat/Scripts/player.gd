@@ -102,7 +102,7 @@ func _physics_process(delta):
 		hit_box_active = true
 		attack_damage = light_attack_dmg
 		velocity.x = 0
-		hitbox.position.x = 10 * facing_direction 
+		hitbox.position.x = 80 * facing_direction 
 		animated_sprite.play("light_attack")
 	
 	if Input.is_action_just_pressed("p%s_heavy_attack" % [player_number]) and not attacking:
@@ -110,7 +110,7 @@ func _physics_process(delta):
 		hit_box_active = true
 		attack_damage = heavy_attack_dmg
 		velocity.x = 0
-		hitbox.position.x = 70 * facing_direction 
+		hitbox.position.x = 120 * facing_direction 
 		animated_sprite.play("heavy_attack")
 	
 	dash()

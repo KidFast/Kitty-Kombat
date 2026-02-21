@@ -78,7 +78,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m5u0c"]
-size = Vector2(573.90985, 978.3622)
+size = Vector2(728.6057, 978.3622)
 
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["sofiCat", "sofiCat_hitbox", "sofiCat_hurtBox"]]
 script = ExtResource("1_kyqiw")
@@ -100,7 +100,7 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="hitbox"]
-position = Vector2(98.5, 326.00003)
+position = Vector2(56.250004, 318)
 scale = Vector2(0.42341143, 0.4456427)
 shape = SubResource("RectangleShape2D_m5u0c")
 

@@ -246,7 +246,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ftelq"]
-size = Vector2(124.75, 195.5)
+size = Vector2(153.75, 195.5)
 
 [node name="NerdCat" type="CharacterBody2D" groups=["nerdCat", "nerdCat_hitbox", "nerdCat_hurtbox"]]
 script = ExtResource("1_ftelq")
@@ -257,7 +257,7 @@ position = Vector2(5, -5)
 sprite_frames = SubResource("SpriteFrames_w244l")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.8934968
+frame_progress = 0.45809558
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 position = Vector2(8, -6.5)
@@ -268,7 +268,7 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="hitbox_collision" type="CollisionShape2D" parent="hitbox"]
-position = Vector2(-68.625, 0.25)
+position = Vector2(-83.125, 0.25)
 shape = SubResource("RectangleShape2D_ftelq")
 
 [node name="hurtbox" type="Area2D" parent="."]
