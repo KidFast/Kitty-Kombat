@@ -1,0 +1,92 @@
+[gd_scene load_steps=13 format=3 uid="uid://blhb0uvwniq2g"]
+
+[ext_resource type="Script" uid="uid://dgwmugfpafdsx" path="res://Scripts/player.gd" id="1_kyqiw"]
+[ext_resource type="Texture2D" uid="uid://b07vqiodve44c" path="res://Sprites/Player/sofiCat/heavy_attack/sofi_heavy1.png" id="3_ksbbd"]
+[ext_resource type="Texture2D" uid="uid://ct3axwdtp0iqd" path="res://Sprites/Player/sofiCat/idle/SofiCat_idle.png" id="3_yoq75"]
+[ext_resource type="Texture2D" uid="uid://byiv1bis8h6if" path="res://Sprites/Player/sofiCat/heavy_attack/sofi_heavy2.png" id="4_glx4g"]
+[ext_resource type="Texture2D" uid="uid://bn8pdhcdu2sh4" path="res://Sprites/Player/sofiCat/light_attack/SofiCat_s1.png" id="7_glx4g"]
+[ext_resource type="Texture2D" uid="uid://buxua5nb1xgjv" path="res://Sprites/Player/sofiCat/walking/sofi_walking_left.png" id="7_miouo"]
+[ext_resource type="Texture2D" uid="uid://ckaoemkiivp6y" path="res://Sprites/Player/sofiCat/light_attack/SofiCat_s2.png" id="8_miouo"]
+[ext_resource type="Texture2D" uid="uid://dfu8p78nniamr" path="res://Sprites/Player/sofiCat/idle/SofiCat_s1.png" id="8_o3h8g"]
+[ext_resource type="Texture2D" uid="uid://dt2ttyoxfog8" path="res://Sprites/Player/sofiCat/walking/sofi_walking_right.png" id="9_1e7my"]
+[ext_resource type="Texture2D" uid="uid://oekldwpam57i" path="res://Sprites/Player/sofiCat/light_attack/SofiCat_s3.png" id="9_o3h8g"]
+[ext_resource type="Texture2D" uid="uid://b36i8nno60qik" path="res://Sprites/Player/sofiCat/light_attack/SofiCat_s4.png" id="10_1e7my"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_arntx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_o3h8g")
+}, {
+"duration": 2.0,
+"texture": ExtResource("3_ksbbd")
+}, {
+"duration": 1.5,
+"texture": ExtResource("4_glx4g")
+}],
+"loop": false,
+"name": &"heavy_attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 3.0,
+"texture": ExtResource("3_yoq75")
+}, {
+"duration": 3.0,
+"texture": ExtResource("8_o3h8g")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_glx4g")
+}, {
+"duration": 0.5,
+"texture": ExtResource("8_miouo")
+}, {
+"duration": 1.2,
+"texture": ExtResource("9_o3h8g")
+}, {
+"duration": 1.5,
+"texture": ExtResource("10_1e7my")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_o3h8g")
+}],
+"loop": false,
+"name": &"light_attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.8,
+"texture": ExtResource("7_miouo")
+}, {
+"duration": 0.8,
+"texture": ExtResource("8_o3h8g")
+}, {
+"duration": 0.8,
+"texture": ExtResource("9_1e7my")
+}, {
+"duration": 0.8,
+"texture": ExtResource("8_o3h8g")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 5.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_kyqiw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(240, 308.5)
+scale = Vector2(0.4, 0.43545455)
+sprite_frames = SubResource("SpriteFrames_arntx")
+animation = &"light_attack"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(239.88731, 303.5867)
+scale = Vector2(0.42341134, 0.4456426)
+polygon = PackedVector2Array(-150, -481, 136, -499, 308, -594, 351, -587, 409, -324, 312, 4, 279, 12, 331, 199, 261, 542, -279, 542, -403, 181, -271, 0, -392, -189, -374, -333, -425, -464, -304, -546, -203, -544)
