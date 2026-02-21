@@ -3,6 +3,8 @@ extends CharacterBody2D
 @export var player_number : int
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var health_bar : ProgressBar = $health_bar
+@onready var hitbox : Area2D = $hitbox
+@onready var hurtbox : Area2D = $hurtbox
 
 #movement variables
 @export var speed = 400
@@ -18,17 +20,26 @@ var attacking = false
 
 #fight variables
 var health = 100
+var attack_damage = 0
 var light_attack_dmg = 5
 var heavy_attack_dmg = 15
+var hit_box_active = false
 
 func _ready():
+	add_to_group("sofiCat")
+	hitbox.add_to_group("sofiCat_hitbox")
+	hurtbox.add_to_group("sofiCat_hurtbox")
+	
 	animated_sprite.animation_finished.connect(_on_animation_finished)
 	
 	health_bar.init_health(health)
 
+
+
 func _on_animation_finished():
 	if animated_sprite.animation in ["light_attack", "heavy_attack"]:
 		attacking = false
+		hit_box_active = false
 		
 		if velocity == Vector2.ZERO:
 			animated_sprite.play("idle")
@@ -80,14 +91,36 @@ func _physics_process(delta):
 	
 	if Input.is_action_just_pressed("p%s_light_attack" % [player_number]) and not attacking:
 		attacking = true
+		hit_box_active = true
+		attack_damage = light_attack_dmg
 		velocity.x = 0
 		animated_sprite.play("light_attack")
 	
 	if Input.is_action_just_pressed("p%s_heavy_attack" % [player_number]) and not attacking:
 		attacking = true
+		hit_box_active = true
+		attack_damage = heavy_attack_dmg
 		velocity.x = 0
 		animated_sprite.play("heavy_attack")
 	
 	dash()
 	get_input()
 	move_and_slide()
+
+
+func _on_hitbox_area_entered(area: Area2D):
+	if not hit_box_active:
+		return
+	
+	if area.is_in_group("nerdCat_hurtbox"):
+		var opponent = area.owner
+		opponent.take_damage(attack_damage)
+
+func _on_hurtbox_area_entered(area: Area2D):
+	if area.is_in_group("nerdCat_hitbox"):
+		take_damage(area.owner.attack_damage)
+
+
+func take_damage(damage : int):
+	health -= damage
+	health_bar._set_health(health)
