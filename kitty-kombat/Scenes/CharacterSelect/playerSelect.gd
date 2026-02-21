@@ -36,6 +36,8 @@ func _process(delta):
 		elif Input.is_action_just_pressed("p1_heavy_attack"):
 			p1_confirmed = false
 			update_visuals()
+		elif Input.is_action_just_pressed("p1_heavy_attack") and !p1_confirmed:
+			get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
 			
 	if not p2_confirmed:
 		if Input.is_action_just_pressed("p2_left"):
@@ -50,6 +52,8 @@ func _process(delta):
 		elif Input.is_action_just_pressed("p2_heavy_attack"):
 			p2_confirmed = false
 			update_visuals()
+		elif Input.is_action_just_pressed("p2_heavy_attack") and !p2_confirmed:
+			get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
 			
 			
 		
@@ -73,5 +77,5 @@ func update_visuals():
 func start_game():
 	GameData.p1_character = characters[p1_selection]
 	GameData.p2_character = characters[p2_selection]
-	get_tree().change_scene_to_file("res://your_game_scene.tscn")
+	get_tree().change_scene_to_file("res://Scenes/player_test.tscn")
 	
