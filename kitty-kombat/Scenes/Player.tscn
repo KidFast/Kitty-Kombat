@@ -1,19 +1,74 @@
-[gd_scene load_steps=4 format=3 uid="uid://blhb0uvwniq2g"]
+[gd_scene load_steps=10 format=3 uid="uid://blhb0uvwniq2g"]
 
 [ext_resource type="Script" uid="uid://dgwmugfpafdsx" path="res://Scripts/player.gd" id="1_kyqiw"]
-[ext_resource type="Texture2D" uid="uid://oekldwpam57i" path="res://Sprites/Player/sofiCat/SofiCat_s1.png" id="2_kyqiw"]
+[ext_resource type="Texture2D" uid="uid://bn8pdhcdu2sh4" path="res://Sprites/Player/sofiCat/frames/SofiCat_s1.png" id="3_52ee3"]
+[ext_resource type="Texture2D" uid="uid://c48xrm4qvoxy4" path="res://Sprites/Player/sofiCat/frames/SofiCat_idle_mid.png" id="4_bhhdu"]
+[ext_resource type="Texture2D" uid="uid://ckaoemkiivp6y" path="res://Sprites/Player/sofiCat/frames/SofiCat_s2.png" id="5_megsn"]
+[ext_resource type="Texture2D" uid="uid://bihl62la5jxm" path="res://Sprites/Player/sofiCat/frames/SofiCat_s3.png" id="6_yoq75"]
+[ext_resource type="Texture2D" uid="uid://dcys3lcg88sba" path="res://Sprites/Player/sofiCat/frames/walking/sofi_walking_left.png" id="7_bhhdu"]
+[ext_resource type="Texture2D" uid="uid://b36i8nno60qik" path="res://Sprites/Player/sofiCat/frames/SofiCat_s4.png" id="7_ksbbd"]
+[ext_resource type="Texture2D" uid="uid://cn7meb2qv41fv" path="res://Sprites/Player/sofiCat/frames/walking/sofi_walking_right.png" id="8_megsn"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gntrk"]
-size = Vector2(370, 540)
+[sub_resource type="SpriteFrames" id="SpriteFrames_glx4g"]
+animations = [{
+"frames": [{
+"duration": 3.0,
+"texture": ExtResource("3_52ee3")
+}, {
+"duration": 3.0,
+"texture": ExtResource("4_bhhdu")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_52ee3")
+}, {
+"duration": 0.8,
+"texture": ExtResource("5_megsn")
+}, {
+"duration": 0.8,
+"texture": ExtResource("6_yoq75")
+}, {
+"duration": 2.0,
+"texture": ExtResource("7_ksbbd")
+}, {
+"duration": 0.2,
+"texture": ExtResource("6_yoq75")
+}],
+"loop": true,
+"name": &"light_attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_bhhdu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_52ee3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_megsn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_52ee3")
+}],
+"loop": true,
+"name": &"walking_left",
+"speed": 5.0
+}]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_kyqiw")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(218, 271)
-shape = SubResource("RectangleShape2D_gntrk")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(218.99998, 289)
+scale = Vector2(0.473125, 0.52090913)
+sprite_frames = SubResource("SpriteFrames_glx4g")
+animation = &"walking_left"
+frame_progress = 0.72601324
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(214, 275.00003)
-scale = Vector2(0.50874996, 0.48909092)
-texture = ExtResource("2_kyqiw")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(92, 568, 314, 569, 347, 459, 336, 334, 313, 289, 362, 278, 406, 173, 383, 99, 387, 11, 351, -2, 328, -1, 282, 35, 154, 35, 116, 5, 74, 9, 41, 144, 69, 290, 103, 297, 62, 393, 67, 490)
