@@ -1,11 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://bohkjx7pcatip"]
+[gd_scene load_steps=3 format=3 uid="uid://2454jqk4lto5"]
 
-[ext_resource type="Texture2D" uid="uid://bn8pdhcdu2sh4" path="res://Sprites/Player/sofiCat/light_attack/SofiCat_s1.png" id="1_ohu2k"]
+[ext_resource type="Texture2D" uid="uid://bn8pdhcdu2sh4" path="res://Sprites/Player/sofiCat/light_attack/SofiCat_s1.png" id="1_0lthk"]
 
 [sub_resource type="Theme" id="Theme_1fs3a"]
 
 [node name="HealthBars" type="Node2D"]
-position = Vector2(1159.18, 0)
 
 [node name="background" type="ColorRect" parent="."]
 z_index = -1
@@ -25,14 +24,14 @@ theme_override_font_sizes/font_size = 30
 text = "Health"
 metadata/_edit_use_anchors_ = true
 
-[node name="nerdCat_label" type="Label" parent="."]
+[node name="sofiCat_label" type="Label" parent="."]
 offset_left = 17.0
 offset_top = 6.0
 offset_right = 255.0
 offset_bottom = 96.0
-theme_override_colors/font_color = Color(0.48357737, 0.36456543, 0.61821645, 1)
+theme_override_colors/font_color = Color(0.71210915, 0.21447513, 0.39120293, 1)
 theme_override_font_sizes/font_size = 65
-text = "Nerd Cat"
+text = "Sofi Cat"
 metadata/_edit_use_anchors_ = true
 
 [node name="background2" type="ColorRect" parent="."]
@@ -41,7 +40,7 @@ offset_top = 16.0
 offset_right = 713.0
 offset_bottom = 193.0
 theme = SubResource("Theme_1fs3a")
-color = Color(0.8913062, 0.8041146, 0.8578395, 1)
+color = Color(0.9019608, 0.8117647, 0.77254903, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="background3" type="ColorRect" parent="."]
@@ -50,7 +49,7 @@ offset_top = 25.0
 offset_right = 697.0
 offset_bottom = 183.0
 theme = SubResource("Theme_1fs3a")
-color = Color(0.8278012, 0.6931796, 0.82835, 1)
+color = Color(0.8627451, 0.69803923, 0.6901961, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -58,6 +57,6 @@ offset_left = 559.0
 offset_top = 34.0
 offset_right = 672.0
 offset_bottom = 181.0
-texture = ExtResource("1_ohu2k")
+texture = ExtResource("1_0lthk")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true

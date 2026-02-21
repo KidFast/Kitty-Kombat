@@ -77,7 +77,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="CharacterBody2D" type="CharacterBody2D" groups=["sofiCat", "sofiCat_hitbox", "sofiCat_hurtBox"]]
 script = ExtResource("1_kyqiw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -90,3 +90,20 @@ animation = &"light_attack"
 position = Vector2(239.88731, 303.5867)
 scale = Vector2(0.42341134, 0.4456426)
 polygon = PackedVector2Array(-150, -481, 136, -499, 308, -594, 351, -587, 409, -324, 312, 4, 279, 12, 331, 199, 261, 542, -279, 542, -403, 181, -271, 0, -392, -189, -374, -333, -425, -464, -304, -546, -203, -544)
+
+[node name="hitbox" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="hitbox"]
+position = Vector2(239.88731, 303.5867)
+scale = Vector2(0.42341134, 0.4456426)
+polygon = PackedVector2Array(-150, -481, 136, -499, 308, -594, 351, -587, 409, -324, 312, 4, 279, 12, 331, 199, 261, 542, -279, 542, -403, 181, -271, 0, -392, -189, -374, -333, -425, -464, -304, -546, -203, -544)
+
+[node name="hurtbox" type="Area2D" parent="." groups=["sofiCat_hurtBox"]]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="hurtbox"]
+position = Vector2(239.88731, 303.5867)
+scale = Vector2(0.42341134, 0.4456426)
+polygon = PackedVector2Array(-150, -481, 136, -499, 308, -594, 351, -587, 409, -324, 312, 4, 279, 12, 331, 199, 261, 542, -279, 542, -403, 181, -271, 0, -392, -189, -374, -333, -425, -464, -304, -546, -203, -544)
+
+[connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="area_entered" from="hurtbox" to="." method="_on_hurtbox_area_entered"]

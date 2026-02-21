@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://ca1p7ngmt8e4c"]
 
 [ext_resource type="PackedScene" uid="uid://blhb0uvwniq2g" path="res://Scenes/sofiCat.tscn" id="1_xjjte"]
-[ext_resource type="PackedScene" uid="uid://b8anspv0t678k" path="res://Scenes/toluCar_health_bar.tscn" id="2_pm723"]
-[ext_resource type="PackedScene" uid="uid://bohkjx7pcatip" path="res://Scenes/sofiCat_health_UI.tscn" id="3_70u62"]
+[ext_resource type="PackedScene" path="res://Scenes/toluCar_health_bar.tscn" id="2_pm723"]
+[ext_resource type="PackedScene" uid="uid://bohkjx7pcatip" path="res://Scenes/nerdCat_health_UI.tscn" id="3_70u62"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xjjte"]
 size = Vector2(1025.2399, 599.097)
