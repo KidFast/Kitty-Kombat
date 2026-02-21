@@ -63,8 +63,8 @@ func _process(delta):
 				get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
 			update_visuals()
 			
-			if p1_confirmed and p2_confirmed:
-				start_game()
+	if p1_confirmed and p2_confirmed:
+		start_game()
 		
 func update_visuals():
 	
