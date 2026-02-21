@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://cmkigadclkeav"]
+
+[ext_resource type="FontFile" uid="uid://ccfjfp4hfprry" path="res://Assets/Font/karmatic-arcade/ka1.ttf" id="1_4oxt1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fgmkn"]
+bg_color = Color(0.34901962, 0.34901962, 0.34901962, 0.47843137)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sk4ta"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nihk7"]
+bg_color = Color(0.23392546, 0.23392549, 0.23392531, 1)
+border_color = Color(0, 0, 0, 1)
+
+[node name="PlayerButton" type="Button"]
+custom_minimum_size = Vector2(0, 18)
+size_flags_vertical = 3
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_fgmkn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sk4ta")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nihk7")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="PlayerLabel" type="Label" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 8
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("1_4oxt1")
+theme_override_font_sizes/font_size = 46
+text = "Sofi Cat"
+horizontal_alignment = 1
+vertical_alignment = 2
