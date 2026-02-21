@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bohkjx7pcatip" path="res://Scenes/sofiCat_health_bar.tscn" id="3_70u62"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xjjte"]
-size = Vector2(508.88205, 374.00275)
+size = Vector2(1025.2399, 599.097)
 
 [node name="Node2D" type="Node2D"]
 
@@ -23,14 +23,17 @@ player_number = 2
 position = Vector2(383, 733)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="platform"]
-position = Vector2(476.5, 54)
+position = Vector2(575, 263.5)
 scale = Vector2(1.8727325, -0.2887679)
 shape = SubResource("RectangleShape2D_xjjte")
 
 [node name="ColorRect" type="ColorRect" parent="platform"]
-offset_right = 953.0
-offset_bottom = 108.0
+offset_left = -384.0
+offset_top = 178.0
+offset_right = 1532.0
+offset_bottom = 350.0
 
 [node name="HealthBars2" parent="." instance=ExtResource("2_pm723")]
+position = Vector2(1159, -2)
 
 [node name="HealthBars" parent="." instance=ExtResource("3_70u62")]

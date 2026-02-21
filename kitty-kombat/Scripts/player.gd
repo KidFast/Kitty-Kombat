@@ -76,13 +76,13 @@ func _physics_process(delta):
 		velocity.y = jump_velocity
 	
 	if Input.is_action_just_pressed("p%s_light_attack" % [player_number]) and not attacking:
-		print("Light attack started")
 		attacking = true
+		velocity.x = 0
 		animated_sprite.play("light_attack")
 	
 	if Input.is_action_just_pressed("p%s_heavy_attack" % [player_number]) and not attacking:
-		print("Heavy attack started")
 		attacking = true
+		velocity.x = 0
 		animated_sprite.play("heavy_attack")
 	
 	dash()
