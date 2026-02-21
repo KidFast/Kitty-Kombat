@@ -34,10 +34,8 @@ offset_bottom = 908.5972
 scale = Vector2(1.0087274, 1.0178227)
 color = Color(0, 0.2901961, 1, 0.5411765)
 
-[node name="OptionList" type="VBoxContainer" parent="."]
-layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
+[node name="OptionList" type="HBoxContainer" parent="."]
+layout_mode = 1
 
 [node name="NerdCatButton" type="VBoxContainer" parent="OptionList"]
 top_level = true

@@ -18,7 +18,7 @@ var p2_confirmed := false
 
 func _ready():
 		assert(option_buttons.size() == characters.size())
-		update_visuals()
+		call_deferred("update_visuals")
 
 func _process(delta):
 	
@@ -38,10 +38,10 @@ func _process(delta):
 			
 	if not p2_confirmed:
 		if Input.is_action_just_pressed("p2_left"):
-			p2_selection = wrapi(p1_selection - 1, 0, characters.size())
+			p2_selection = wrapi(p2_selection - 1, 0, characters.size())
 			update_visuals()
 		elif Input.is_action_just_pressed("p2_right"):
-			p2_selection = wrapi(p1_selection + 1, 0, characters.size())
+			p2_selection = wrapi(p2_selection + 1, 0, characters.size())
 			update_visuals()
 		elif Input.is_action_just_pressed("p2_light_attack"):
 			p2_confirmed = true
@@ -66,6 +66,7 @@ func update_visuals():
 		
 		if p1_ready_label:
 			p1_ready_label.visible = p1_confirmed
+		if p2_ready_label:
 			p2_ready_label.visible = p2_confirmed
 	
 	
