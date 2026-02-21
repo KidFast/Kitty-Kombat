@@ -61,6 +61,12 @@ window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/mode=3
 
+[importer_defaults]
+
+animation_library={
+&"nodes/root_script": Resource("uid://dbae5tymas0ey", "res://Scripts/GameData.gd")
+}
+
 [input]
 
 p1_left={

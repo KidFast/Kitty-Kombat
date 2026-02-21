@@ -8,8 +8,9 @@ var p2_selection := 0
 var p1_confirmed := false
 var p2_confirmed := false
 
-@onready var OptionList = $OptionList
-@onready var option_buttons = OptionList.get_children()
+@onready var nerd_cat_button = $NerdCatButton
+@onready var sofi_cat_button = $SofiCatButton
+@onready var option_buttons = [nerd_cat_button, sofi_cat_button]
 
 @onready var p1_highlight = $P1Highlight
 @onready var p2_highlight = $P2Highlight
@@ -68,5 +69,10 @@ func update_visuals():
 			p1_ready_label.visible = p1_confirmed
 		if p2_ready_label:
 			p2_ready_label.visible = p2_confirmed
-	
+			
+func start_game():
+	# Replace with your actual game scene path
+	GameData.p1_character = characters[p1_selection]
+	GameData.p2_character = characters[p2_selection]
+	get_tree().change_scene_to_file("res://your_game_scene.tscn")
 	
