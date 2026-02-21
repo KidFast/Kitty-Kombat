@@ -1,6 +1,6 @@
 extends Control
 
-var characters = ["NerdCat", "SofiCat"]
+var characters = ["nerdCat", "sofiCat"]
 
 var p1_selection := 0
 var p2_selection := 0
