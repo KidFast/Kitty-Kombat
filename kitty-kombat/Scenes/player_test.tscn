@@ -32,12 +32,14 @@ player_number = 2
 
 [node name="health_bar_UI" parent="NerdCat" instance=ExtResource("3_70u62")]
 position = Vector2(155.89893, -835.14185)
+metadata/_edit_lock_ = true
 
 [node name="health_bar" parent="NerdCat" instance=ExtResource("3_yi8xp")]
 offset_left = 177.40216
 offset_top = -687.9171
 offset_right = 633.4021
 offset_bottom = -641.9171
+metadata/_edit_lock_ = true
 
 [node name="sofiCat" parent="." instance=ExtResource("1_xjjte")]
 position = Vector2(485, 491.99997)
@@ -47,6 +49,7 @@ player_number = 1
 [node name="health_bar_UI" parent="sofiCat" instance=ExtResource("4_yi8xp")]
 position = Vector2(-1140.6829, -1282.0272)
 scale = Vector2(1.7457625, 2.0000288)
+metadata/_edit_lock_ = true
 
 [node name="health_bar" parent="sofiCat" instance=ExtResource("3_yi8xp")]
 offset_left = -1105.4043
@@ -54,3 +57,4 @@ offset_top = -984.97205
 offset_right = -649.4043
 offset_bottom = -938.97205
 scale = Vector2(1.7430269, 1.9774265)
+metadata/_edit_lock_ = true

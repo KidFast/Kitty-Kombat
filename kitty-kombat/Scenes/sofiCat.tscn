@@ -100,7 +100,7 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="hitbox"]
-position = Vector2(56.250004, 318)
+position = Vector2(-5, 318)
 scale = Vector2(0.42341143, 0.4456427)
 shape = SubResource("RectangleShape2D_m5u0c")
 
