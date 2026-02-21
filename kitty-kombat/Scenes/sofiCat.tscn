@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://blhb0uvwniq2g"]
+[gd_scene load_steps=14 format=3 uid="uid://blhb0uvwniq2g"]
 
 [ext_resource type="Script" uid="uid://dgwmugfpafdsx" path="res://Scripts/player.gd" id="1_kyqiw"]
 [ext_resource type="Texture2D" uid="uid://b07vqiodve44c" path="res://Sprites/Player/sofiCat/heavy_attack/sofi_heavy1.png" id="3_ksbbd"]
@@ -40,7 +40,7 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 0.3,
 "texture": ExtResource("7_glx4g")
 }, {
 "duration": 0.5,
@@ -49,10 +49,10 @@ animations = [{
 "duration": 1.2,
 "texture": ExtResource("9_o3h8g")
 }, {
-"duration": 1.5,
+"duration": 1.2,
 "texture": ExtResource("10_1e7my")
 }, {
-"duration": 1.0,
+"duration": 0.4,
 "texture": ExtResource("9_o3h8g")
 }],
 "loop": false,
@@ -77,8 +77,12 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m5u0c"]
+size = Vector2(573.90985, 978.3622)
+
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["sofiCat", "sofiCat_hitbox", "sofiCat_hurtBox"]]
 script = ExtResource("1_kyqiw")
+cat_name = "sofiCat"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(240, 308.5)
@@ -86,24 +90,28 @@ scale = Vector2(0.4, 0.43545455)
 sprite_frames = SubResource("SpriteFrames_arntx")
 animation = &"light_attack"
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(239.88731, 303.5867)
-scale = Vector2(0.42341134, 0.4456426)
-polygon = PackedVector2Array(-150, -481, 136, -499, 308, -594, 351, -587, 409, -324, 312, 4, 279, 12, 331, 199, 261, 542, -279, 542, -403, 181, -271, 0, -392, -189, -374, -333, -425, -464, -304, -546, -203, -544)
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(240.5, 319)
+scale = Vector2(0.42341143, 0.4456427)
+shape = SubResource("RectangleShape2D_m5u0c")
 
 [node name="hitbox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="hitbox"]
-position = Vector2(239.88731, 303.5867)
-scale = Vector2(0.42341134, 0.4456426)
-polygon = PackedVector2Array(-150, -481, 136, -499, 308, -594, 351, -587, 409, -324, 312, 4, 279, 12, 331, 199, 261, 542, -279, 542, -403, 181, -271, 0, -392, -189, -374, -333, -425, -464, -304, -546, -203, -544)
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(98.5, 326.00003)
+scale = Vector2(0.42341143, 0.4456427)
+shape = SubResource("RectangleShape2D_m5u0c")
 
 [node name="hurtbox" type="Area2D" parent="." groups=["sofiCat_hurtBox"]]
+collision_layer = 2
+collision_mask = 4
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="hurtbox"]
-position = Vector2(239.88731, 303.5867)
-scale = Vector2(0.42341134, 0.4456426)
-polygon = PackedVector2Array(-150, -481, 136, -499, 308, -594, 351, -587, 409, -324, 312, 4, 279, 12, 331, 199, 261, 542, -279, 542, -403, 181, -271, 0, -392, -189, -374, -333, -425, -464, -304, -546, -203, -544)
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="hurtbox"]
+position = Vector2(236, 311.50003)
+scale = Vector2(0.42341143, 0.4456427)
+shape = SubResource("RectangleShape2D_m5u0c")
 
 [connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="area_entered" from="hurtbox" to="." method="_on_hurtbox_area_entered"]

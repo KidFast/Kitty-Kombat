@@ -1,23 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://ca1p7ngmt8e4c"]
+[gd_scene load_steps=7 format=3 uid="uid://ca1p7ngmt8e4c"]
 
+[ext_resource type="PackedScene" uid="uid://bg2v1w0i8he7p" path="res://Scenes/nerdCat.tscn" id="1_70u62"]
 [ext_resource type="PackedScene" uid="uid://blhb0uvwniq2g" path="res://Scenes/sofiCat.tscn" id="1_xjjte"]
-[ext_resource type="PackedScene" path="res://Scenes/toluCar_health_bar.tscn" id="2_pm723"]
 [ext_resource type="PackedScene" uid="uid://bohkjx7pcatip" path="res://Scenes/nerdCat_health_UI.tscn" id="3_70u62"]
+[ext_resource type="PackedScene" uid="uid://boe5btpjudc8r" path="res://Scenes/new_health_bar.tscn" id="3_yi8xp"]
+[ext_resource type="PackedScene" uid="uid://2454jqk4lto5" path="res://Scenes/sofiCat_health_UI.tscn" id="4_yi8xp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xjjte"]
 size = Vector2(1025.2399, 599.097)
 
 [node name="Node2D" type="Node2D"]
-
-[node name="p1" parent="." instance=ExtResource("1_xjjte")]
-position = Vector2(925, 111)
-scale = Vector2(0.47999758, 0.44000024)
-player_number = 1
-
-[node name="p2" parent="." instance=ExtResource("1_xjjte")]
-position = Vector2(409, 109)
-scale = Vector2(0.49142206, 0.44000018)
-player_number = 2
 
 [node name="platform" type="StaticBody2D" parent="."]
 position = Vector2(383, 733)
@@ -33,7 +25,32 @@ offset_top = 178.0
 offset_right = 1532.0
 offset_bottom = 350.0
 
-[node name="HealthBars2" parent="." instance=ExtResource("2_pm723")]
-position = Vector2(1159, -2)
+[node name="NerdCat" parent="." instance=ExtResource("1_70u62")]
+position = Vector2(1237, 641)
+scale = Vector2(0.74407184, 0.7675343)
+player_number = 2
 
-[node name="HealthBars" parent="." instance=ExtResource("3_70u62")]
+[node name="health_bar_UI" parent="NerdCat" instance=ExtResource("3_70u62")]
+position = Vector2(155.89893, -835.14185)
+
+[node name="health_bar" parent="NerdCat" instance=ExtResource("3_yi8xp")]
+offset_left = 177.40216
+offset_top = -687.9171
+offset_right = 633.4021
+offset_bottom = -641.9171
+
+[node name="sofiCat" parent="." instance=ExtResource("1_xjjte")]
+position = Vector2(485, 491.99997)
+scale = Vector2(0.4251839, 0.38376716)
+player_number = 1
+
+[node name="health_bar_UI" parent="sofiCat" instance=ExtResource("4_yi8xp")]
+position = Vector2(-1140.6829, -1282.0272)
+scale = Vector2(1.7457625, 2.0000288)
+
+[node name="health_bar" parent="sofiCat" instance=ExtResource("3_yi8xp")]
+offset_left = -1105.4043
+offset_top = -984.97205
+offset_right = -649.4043
+offset_bottom = -938.97205
+scale = Vector2(1.7430269, 1.9774265)
