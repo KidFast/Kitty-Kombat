@@ -1,14 +1,12 @@
 extends CharacterBody2D
 
-@onready var animated_sprite : AnimatedSprite2D = $AnimatedSprite2D
-
 @export var player_number : int
 
 #movement variables
 @export var speed = 400
 @export var dash_speed = 1400
 
-const jump_velocity = -1250
+const jump_velocity = -400
 
 var dash_direction = Vector2(1,0)
 var can_dash = true
@@ -40,20 +38,11 @@ func dash():
 		dashing = true
 		await get_tree().create_timer(0.2).timeout
 		dashing = false
-
-func attack():
 	
-	if Input.is_action_just_pressed("p%s_light_attack" % [player_number]):
-		animated_sprite.play("light_attack")
 #getting movement input
 func get_input():
 	if dashing:			#doesn't accept input while dashing
 		return
-	
-	if velocity == Vector2.ZERO:
-		animated_sprite.play("idle")
-	else:
-		animated_sprite.play("walking_left")
 	
 	var input_direction
 	input_direction = Input.get_vector("p%s_left" % [player_number], "p%s_right" % [player_number], "p%s_up" % [player_number], "p%s_down" % [player_number])
@@ -67,7 +56,6 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("p%s_up" % [player_number]) and is_on_floor():
 		velocity.y = jump_velocity
 	
-	attack()
 	dash()
 	get_input()
 	move_and_slide()
