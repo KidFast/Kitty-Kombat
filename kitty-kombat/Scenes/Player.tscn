@@ -68,7 +68,7 @@ position = Vector2(218.99998, 289)
 scale = Vector2(0.473125, 0.52090913)
 sprite_frames = SubResource("SpriteFrames_glx4g")
 animation = &"walking_left"
-frame_progress = 0.44106737
+frame_progress = 0.72601324
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(92, 568, 314, 569, 347, 459, 336, 334, 313, 289, 362, 278, 406, 173, 383, 99, 387, 11, 351, -2, 328, -1, 282, 35, 154, 35, 116, 5, 74, 9, 41, 144, 69, 290, 103, 297, 62, 393, 67, 490)

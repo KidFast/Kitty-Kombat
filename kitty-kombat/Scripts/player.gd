@@ -40,7 +40,11 @@ func dash():
 		dashing = true
 		await get_tree().create_timer(0.2).timeout
 		dashing = false
+
+func attack():
 	
+	if Input.is_action_just_pressed("p%s_light_attack" % [player_number]):
+		animated_sprite.play("light_attack")
 #getting movement input
 func get_input():
 	if dashing:			#doesn't accept input while dashing
@@ -63,6 +67,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("p%s_up" % [player_number]) and is_on_floor():
 		velocity.y = jump_velocity
 	
+	attack()
 	dash()
 	get_input()
 	move_and_slide()
