@@ -6,6 +6,9 @@ extends CharacterBody2D
 @onready var hitbox : Area2D = $hitbox
 @onready var hurtbox : Area2D = $hurtbox
 
+@export var cat_name : String
+var facing_direction = 1
+
 #movement variables
 @export var speed = 400
 @export var dash_speed = 1400
@@ -26,9 +29,9 @@ var heavy_attack_dmg = 15
 var hit_box_active = false
 
 func _ready():
-	add_to_group("sofiCat")
-	hitbox.add_to_group("sofiCat_hitbox")
-	hurtbox.add_to_group("sofiCat_hurtbox")
+	add_to_group("%s" % [cat_name])
+	hitbox.add_to_group("%s_hitbox" % [cat_name])
+	hurtbox.add_to_group("%s_hurtbox" % [cat_name])
 	
 	animated_sprite.animation_finished.connect(_on_animation_finished)
 	
@@ -40,6 +43,7 @@ func _on_animation_finished():
 	if animated_sprite.animation in ["light_attack", "heavy_attack"]:
 		attacking = false
 		hit_box_active = false
+		hitbox.position.x = 0
 		
 		if velocity == Vector2.ZERO:
 			animated_sprite.play("idle")
@@ -81,6 +85,10 @@ func get_input():
 	input_direction = Input.get_vector("p%s_left" % [player_number], "p%s_right" % [player_number], "p%s_up" % [player_number], "p%s_down" % [player_number])
 	
 	velocity.x = input_direction.x * speed
+	
+	if input_direction.x != 0:
+		facing_direction = sign(input_direction.x)
+		animated_sprite.flip_h = (facing_direction == 1)
 
 func _physics_process(delta):
 	if not is_on_floor():
@@ -94,6 +102,7 @@ func _physics_process(delta):
 		hit_box_active = true
 		attack_damage = light_attack_dmg
 		velocity.x = 0
+		hitbox.position.x = 10 * facing_direction 
 		animated_sprite.play("light_attack")
 	
 	if Input.is_action_just_pressed("p%s_heavy_attack" % [player_number]) and not attacking:
@@ -101,6 +110,7 @@ func _physics_process(delta):
 		hit_box_active = true
 		attack_damage = heavy_attack_dmg
 		velocity.x = 0
+		hitbox.position.x = 70 * facing_direction 
 		animated_sprite.play("heavy_attack")
 	
 	dash()
@@ -109,18 +119,30 @@ func _physics_process(delta):
 
 
 func _on_hitbox_area_entered(area: Area2D):
-	if not hit_box_active:
+	if area.owner == self:
 		return
 	
-	if area.is_in_group("nerdCat_hurtbox"):
+	if not hit_box_active:
+		return
+		
+	var opponent_name = area.owner.cat_name
+	
+	if area.is_in_group("%s_hurtbox" % opponent_name):
 		var opponent = area.owner
 		opponent.take_damage(attack_damage)
 
 func _on_hurtbox_area_entered(area: Area2D):
-	if area.is_in_group("nerdCat_hitbox"):
+	if area.owner == self:
+		return
+		
+	var opponent_name = area.owner.cat_name
+	if area.is_in_group("%s_hitbox" % opponent_name):
+		if not area.owner.hit_box_active:
+			return
+		
 		take_damage(area.owner.attack_damage)
 
 
 func take_damage(damage : int):
 	health -= damage
-	health_bar._set_health(health)
+	health_bar.health = health
