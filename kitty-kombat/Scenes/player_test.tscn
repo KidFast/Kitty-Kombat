@@ -8,11 +8,11 @@ size = Vector2(508.88205, 374.00275)
 [node name="Node2D" type="Node2D"]
 
 [node name="p1" parent="." instance=ExtResource("1_xjjte")]
-position = Vector2(985, 412)
+position = Vector2(925, 111)
 player_number = 1
 
 [node name="p2" parent="." instance=ExtResource("1_xjjte")]
-position = Vector2(557, 407)
+position = Vector2(409, 109)
 player_number = 2
 
 [node name="platform" type="StaticBody2D" parent="."]

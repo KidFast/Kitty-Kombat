@@ -1,9 +1,10 @@
 extends CharacterBody2D
 
+@export var player_number : int
+
 #movement variables
 @export var speed = 400
 @export var dash_speed = 1400
-@export var player_number : int
 
 const jump_velocity = -400
 
