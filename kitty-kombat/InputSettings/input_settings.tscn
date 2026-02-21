@@ -14,6 +14,35 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_sk4ta")
 
+[node name="NerdCatButton" type="VBoxContainer" parent="."]
+top_level = true
+custom_minimum_size = Vector2(500, 600)
+layout_mode = 0
+offset_left = 136.0
+offset_top = 184.0
+offset_right = 736.0
+offset_bottom = 878.0
+alignment = 1
+
+[node name="PlayerButton1" parent="NerdCatButton" instance=ExtResource("1_tf80a")]
+layout_mode = 2
+
+[node name="PlayerLabel" parent="NerdCatButton/PlayerButton1/MarginContainer/HBoxContainer" index="0"]
+text = "Nerd Cat"
+
+[node name="SofiCatButton" type="VBoxContainer" parent="."]
+top_level = true
+custom_minimum_size = Vector2(500, 600)
+layout_mode = 0
+offset_left = 1224.0
+offset_top = 187.0
+offset_right = 1824.0
+offset_bottom = 881.0
+alignment = 1
+
+[node name="PlayerButton2" parent="SofiCatButton" instance=ExtResource("1_tf80a")]
+layout_mode = 2
+
 [node name="P1Highlight" type="ColorRect" parent="."]
 z_index = 1
 layout_mode = 0
@@ -27,42 +56,12 @@ color = Color(1, 0, 0.17254902, 0.5411765)
 [node name="P2Highlight" type="ColorRect" parent="."]
 z_index = 1
 layout_mode = 0
-offset_left = 1224.0
-offset_top = 176.00002
-offset_right = 1832.6876
-offset_bottom = 908.5972
+offset_left = 1265.0001
+offset_top = 185.00002
+offset_right = 1873.6877
+offset_bottom = 917.5972
 scale = Vector2(1.0087274, 1.0178227)
 color = Color(0, 0.2901961, 1, 0.5411765)
-
-[node name="OptionList" type="HBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="NerdCatButton" type="VBoxContainer" parent="OptionList"]
-top_level = true
-custom_minimum_size = Vector2(500, 600)
-layout_mode = 2
-size_flags_horizontal = 3
-alignment = 1
-
-[node name="PlayerButton1" parent="OptionList/NerdCatButton" instance=ExtResource("1_tf80a")]
-layout_mode = 2
-
-[node name="PlayerLabel" parent="OptionList/NerdCatButton/PlayerButton1/MarginContainer/HBoxContainer" index="0"]
-text = "Nerd Cat"
-
-[node name="SofiCatButton" type="VBoxContainer" parent="OptionList"]
-top_level = true
-custom_minimum_size = Vector2(500, 600)
-layout_mode = 2
-alignment = 1
-
-[node name="PlayerButton2" parent="OptionList/SofiCatButton" instance=ExtResource("1_tf80a")]
-layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -126,5 +125,5 @@ theme_override_fonts/font = ExtResource("1_8sf25")
 theme_override_font_sizes/font_size = 56
 text = "P2 Ready"
 
-[editable path="OptionList/NerdCatButton/PlayerButton1"]
-[editable path="OptionList/SofiCatButton/PlayerButton2"]
+[editable path="NerdCatButton/PlayerButton1"]
+[editable path="SofiCatButton/PlayerButton2"]

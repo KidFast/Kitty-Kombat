@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bn8pdhcdu2sh4"
-path="res://.godot/imported/SofiCat_s1.png-a64bd97897bd4f81aee82ba05624f8f1.ctex"
+path="res://.godot/imported/SofiCat_s1.png-39b8dcf2bffa82bca35cc469e1311cf2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Player/sofiCat/frames/SofiCat_s1.png"
-dest_files=["res://.godot/imported/SofiCat_s1.png-a64bd97897bd4f81aee82ba05624f8f1.ctex"]
+source_file="res://Sprites/Player/sofiCat/frames/light_attack/SofiCat_s1.png"
+dest_files=["res://.godot/imported/SofiCat_s1.png-39b8dcf2bffa82bca35cc469e1311cf2.ctex"]
 
 [params]
 

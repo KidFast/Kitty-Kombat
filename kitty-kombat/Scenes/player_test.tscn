@@ -9,12 +9,10 @@ size = Vector2(508.88205, 374.00275)
 
 [node name="p1" parent="." instance=ExtResource("1_xjjte")]
 position = Vector2(925, 111)
-scale = Vector2(0.313, 0.3)
 player_number = 1
 
 [node name="p2" parent="." instance=ExtResource("1_xjjte")]
-position = Vector2(1119.0001, 272)
-scale = Vector2(0.31, 0.3)
+position = Vector2(409, 109)
 player_number = 2
 
 [node name="platform" type="StaticBody2D" parent="."]
