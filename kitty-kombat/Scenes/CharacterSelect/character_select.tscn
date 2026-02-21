@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://qw3swkb63er8"]
+[gd_scene load_steps=7 format=3 uid="uid://qw3swkb63er8"]
 
 [ext_resource type="FontFile" uid="uid://ccfjfp4hfprry" path="res://Assets/Font/karmatic-arcade/ka1.ttf" id="1_8sf25"]
-[ext_resource type="Script" uid="uid://drltc8wlq2cya" path="res://InputSettings/playerSelect.gd" id="1_sk4ta"]
-[ext_resource type="PackedScene" uid="uid://cmkigadclkeav" path="res://InputSettings/select_player_button.tscn" id="1_tf80a"]
+[ext_resource type="Script" uid="uid://drltc8wlq2cya" path="res://Scenes/CharacterSelect/playerSelect.gd" id="1_sk4ta"]
+[ext_resource type="PackedScene" uid="uid://cmkigadclkeav" path="res://Scenes/CharacterSelect/select_player_button.tscn" id="1_tf80a"]
 [ext_resource type="Texture2D" uid="uid://vcdb8ghvv1jx" path="res://Assets/Background/menu_bg.jpg" id="2_tf80a"]
+[ext_resource type="Texture2D" uid="uid://bn8pdhcdu2sh4" path="res://Sprites/Player/sofiCat/light_attack/SofiCat_s1.png" id="5_gchby"]
+[ext_resource type="Texture2D" uid="uid://lnpopvvmi0bp" path="res://Sprites/Player/nerdCat/nerdCat.png" id="6_qwmle"]
 
 [node name="PlayerCharacterSelect" type="Control"]
 layout_mode = 3
@@ -76,6 +78,7 @@ offset_right = 971.0
 offset_bottom = 535.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1, 0.9210467)
 texture = ExtResource("2_tf80a")
 expand_mode = 1
 
@@ -124,6 +127,16 @@ offset_bottom = 847.0
 theme_override_fonts/font = ExtResource("1_8sf25")
 theme_override_font_sizes/font_size = 56
 text = "P2 Ready"
+
+[node name="SofiCat" type="Sprite2D" parent="."]
+position = Vector2(1538.0001, 508)
+scale = Vector2(0.585, 0.5763636)
+texture = ExtResource("5_gchby")
+
+[node name="NerdCat" type="Sprite2D" parent="."]
+position = Vector2(436.00003, 508.00003)
+scale = Vector2(2.3162057, 2.2748816)
+texture = ExtResource("6_qwmle")
 
 [editable path="NerdCatButton/PlayerButton1"]
 [editable path="SofiCatButton/PlayerButton2"]
