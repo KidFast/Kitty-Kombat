@@ -179,5 +179,6 @@ func checkHealth():
 		call_deferred("_change_to_win_screen")
 
 func _change_to_win_screen():
+	$"../WinScreen"._set_winner_text()
 	$"../winBg".visible = true
 	$"../WinScreen".visible = true

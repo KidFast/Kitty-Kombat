@@ -1,16 +1,13 @@
 extends Control
 
-@onready var p1 = $"../nerdCat"
-@onready var p2 = $"../sofiCat"
+@onready var p1 = $"../sofiCat"
+@onready var p2 = $"../nerdCat"
 
-func _ready() -> void:
-	call_deferred("_set_winner_text")
-	
 func determine_winner():
 	if p1.win_status == 1:
 		print(p1.cat_name)
 		return p1
-	elif p1.win_status == 1:
+	elif p2.win_status == 1:
 		print(p2.cat_name)
 		return p2
 
