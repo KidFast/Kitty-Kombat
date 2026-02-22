@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://bg2v1w0i8he7p"]
+[gd_scene load_steps=33 format=3 uid="uid://bg2v1w0i8he7p"]
 
 [ext_resource type="Texture2D" uid="uid://drhskeqyg02t8" path="res://Sprites/Player/nerdCat/idle/nerdCatIdle.png" id="1_21h21"]
 [ext_resource type="Script" uid="uid://dgwmugfpafdsx" path="res://Scripts/player.gd" id="1_ftelq"]
@@ -54,30 +54,6 @@ region = Rect2(253, 210, 253, 210)
 [sub_resource type="AtlasTexture" id="AtlasTexture_xxbwu"]
 atlas = ExtResource("1_i7mom")
 region = Rect2(506, 210, 253, 210)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6usdb"]
-atlas = ExtResource("1_i7mom")
-region = Rect2(0, 420, 253, 210)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nqjd7"]
-atlas = ExtResource("1_i7mom")
-region = Rect2(253, 420, 253, 210)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7mr53"]
-atlas = ExtResource("1_i7mom")
-region = Rect2(506, 420, 253, 210)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pu8v8"]
-atlas = ExtResource("1_i7mom")
-region = Rect2(0, 630, 253, 210)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vwuov"]
-atlas = ExtResource("1_i7mom")
-region = Rect2(253, 630, 253, 210)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8yjwc"]
-atlas = ExtResource("1_i7mom")
-region = Rect2(506, 630, 253, 210)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fu00g"]
 atlas = ExtResource("1_21h21")
@@ -170,24 +146,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_xxbwu")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6usdb")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nqjd7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7mr53")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pu8v8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vwuov")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8yjwc")
 }],
 "loop": false,
 "name": &"heavy_attack",
@@ -255,9 +213,10 @@ cat_name = "nerdCat"
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(5, -5)
 sprite_frames = SubResource("SpriteFrames_w244l")
-animation = &"idle"
+animation = &"heavy_attack"
 autoplay = "idle"
-frame_progress = 0.9378886
+frame = 5
+frame_progress = 1.0
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 position = Vector2(4, -6.5)
