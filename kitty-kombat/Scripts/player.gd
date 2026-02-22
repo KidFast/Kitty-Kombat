@@ -8,6 +8,7 @@ extends CharacterBody2D
 
 @export var cat_name : String
 var facing_direction = 1
+var win_status = 1		#1 = winner   0 = loser
 
 #movement variables
 @export var speed = 400
@@ -38,8 +39,6 @@ func _ready():
 	animated_sprite.animation_finished.connect(_on_animation_finished)
 	
 	health_bar.init_health(health)
-
-
 
 func _on_animation_finished():
 	if animated_sprite.animation in ["light_attack", "heavy_attack"]:
@@ -147,15 +146,13 @@ func _on_hurtbox_area_entered(area: Area2D):
 
 func take_damage(damage : int):
 	health -= damage
-	health_bar.health = health
+	if(health < 0): health = 0
 	checkHealth()
+	health_bar.health = health
 
 #Win con thinking right now. If the current player health is 0 then they lose and the winner is the other player
 func checkHealth():
-	if health <= 0 and winningPlayer == 1:
-		winningPlayer = 1
+	if health == 0:
+		win_status = 0
 		get_tree().change_scene_to_file("res://Scenes/win_screen.tscn")
-	elif health <= 0 and winningPlayer == 2:
-		winningPlayer = 2
-		get_tree().change_scene_to_file("res://Scenes/win_screen.tscn")
-		
+	return

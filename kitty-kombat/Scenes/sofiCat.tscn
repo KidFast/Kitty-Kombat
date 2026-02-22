@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://blhb0uvwniq2g"]
+[gd_scene load_steps=15 format=3 uid="uid://blhb0uvwniq2g"]
 
 [ext_resource type="Script" uid="uid://dgwmugfpafdsx" path="res://Scripts/player.gd" id="1_kyqiw"]
 [ext_resource type="Texture2D" uid="uid://b07vqiodve44c" path="res://Sprites/Player/sofiCat/heavy_attack/sofi_heavy1.png" id="3_ksbbd"]
@@ -78,7 +78,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m5u0c"]
-size = Vector2(728.6057, 978.3622)
+size = Vector2(663.65704, 1038.9487)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pjy50"]
+size = Vector2(158, 445)
 
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["sofiCat", "sofiCat_hitbox", "sofiCat_hurtBox"]]
 script = ExtResource("1_kyqiw")
@@ -91,7 +94,7 @@ sprite_frames = SubResource("SpriteFrames_arntx")
 animation = &"light_attack"
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(240.5, 319)
+position = Vector2(242.50002, 310.5)
 scale = Vector2(0.42341143, 0.4456427)
 shape = SubResource("RectangleShape2D_m5u0c")
 
@@ -99,17 +102,16 @@ shape = SubResource("RectangleShape2D_m5u0c")
 collision_layer = 4
 collision_mask = 2
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="hitbox"]
-position = Vector2(-5, 318)
-scale = Vector2(0.42341143, 0.4456427)
-shape = SubResource("RectangleShape2D_m5u0c")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(20, 319)
+shape = SubResource("RectangleShape2D_pjy50")
 
 [node name="hurtbox" type="Area2D" parent="." groups=["sofiCat_hurtBox"]]
 collision_layer = 2
 collision_mask = 4
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="hurtbox"]
-position = Vector2(236, 311.50003)
+position = Vector2(242.50002, 310.5)
 scale = Vector2(0.42341143, 0.4456427)
 shape = SubResource("RectangleShape2D_m5u0c")
 

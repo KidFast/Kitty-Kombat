@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://bg2v1w0i8he7p"]
+[gd_scene load_steps=34 format=3 uid="uid://bg2v1w0i8he7p"]
 
 [ext_resource type="Texture2D" uid="uid://drhskeqyg02t8" path="res://Sprites/Player/nerdCat/idle/nerdCatIdle.png" id="1_21h21"]
 [ext_resource type="Script" uid="uid://dgwmugfpafdsx" path="res://Scripts/player.gd" id="1_ftelq"]
@@ -204,7 +204,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ftelq"]
-size = Vector2(216, 195.5)
+size = Vector2(184, 200)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3eoib"]
+size = Vector2(67, 173)
 
 [node name="NerdCat" type="CharacterBody2D" groups=["nerdCat", "nerdCat_hitbox", "nerdCat_hurtbox"]]
 script = ExtResource("1_ftelq")
@@ -219,7 +222,7 @@ frame = 5
 frame_progress = 1.0
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(4, -6.5)
+position = Vector2(9, -3)
 shape = SubResource("RectangleShape2D_ftelq")
 
 [node name="hitbox" type="Area2D" parent="."]
@@ -227,15 +230,14 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="hitbox_collision" type="CollisionShape2D" parent="hitbox"]
-visible = false
-position = Vector2(-83.125, 0.25)
-shape = SubResource("RectangleShape2D_ftelq")
+position = Vector2(-119, 10)
+shape = SubResource("RectangleShape2D_3eoib")
 
 [node name="hurtbox" type="Area2D" parent="."]
+position = Vector2(-161, -29)
 collision_layer = 2
 collision_mask = 4
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="hurtbox"]
-visible = false
-position = Vector2(4, 5.8125)
+position = Vector2(169, 26)
 shape = SubResource("RectangleShape2D_ftelq")

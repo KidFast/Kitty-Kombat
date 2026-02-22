@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://d2qqd3eqtpy8w"]
+[gd_scene load_steps=5 format=3 uid="uid://d2qqd3eqtpy8w"]
 
 [ext_resource type="Script" uid="uid://167tt10u2gwy" path="res://Scripts/win_screen.gd" id="1_a00f1"]
 [ext_resource type="FontFile" uid="uid://ccfjfp4hfprry" path="res://Assets/Font/karmatic-arcade/ka1.ttf" id="1_l5sol"]
+[ext_resource type="PackedScene" uid="uid://blhb0uvwniq2g" path="res://Scenes/sofiCat.tscn" id="3_bwc64"]
+[ext_resource type="PackedScene" uid="uid://bg2v1w0i8he7p" path="res://Scenes/nerdCat.tscn" id="4_85imr"]
 
 [node name="WinScreen" type="Control"]
 layout_mode = 3
@@ -52,5 +54,11 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_l5sol")
 text = "Quit"
+
+[node name="sofiCat" parent="." instance=ExtResource("3_bwc64")]
+visible = false
+
+[node name="nerdCat" parent="." instance=ExtResource("4_85imr")]
+visible = false
 
 [connection signal="pressed" from="quitButton" to="." method="_on_quit_button_pressed"]

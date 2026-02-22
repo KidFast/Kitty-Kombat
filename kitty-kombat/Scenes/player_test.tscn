@@ -15,6 +15,7 @@ size = Vector2(1025.2399, 599.097)
 script = ExtResource("2_5n1oj")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+z_index = -1
 offset_left = -2.0
 offset_top = 2.0
 offset_right = 1918.0
@@ -47,16 +48,16 @@ position = Vector2(575, 263.5)
 scale = Vector2(1.8727325, -0.2887679)
 shape = SubResource("RectangleShape2D_xjjte")
 
-[node name="NerdCat" parent="." instance=ExtResource("1_70u62")]
+[node name="nerdCat" parent="." instance=ExtResource("1_70u62")]
 position = Vector2(1237, 641)
 scale = Vector2(0.74407184, 0.7675343)
 player_number = 2
 
-[node name="health_bar_UI" parent="NerdCat" instance=ExtResource("3_70u62")]
+[node name="health_bar_UI" parent="nerdCat" instance=ExtResource("3_70u62")]
 position = Vector2(155.89893, -835.14185)
 metadata/_edit_lock_ = true
 
-[node name="health_bar" parent="NerdCat" instance=ExtResource("3_yi8xp")]
+[node name="health_bar" parent="nerdCat" instance=ExtResource("3_yi8xp")]
 offset_left = 177.40216
 offset_top = -687.9171
 offset_right = 633.4021
