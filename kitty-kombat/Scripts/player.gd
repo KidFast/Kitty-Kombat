@@ -3,9 +3,11 @@ extends CharacterBody2D
 @export var player_number : int
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var health_bar : ProgressBar = $health_bar
-@onready var hitbox : Area2D = $hitbox
+@onready var hitbox_left : Area2D = $hitbox_left
+@onready var hitbox_right : Area2D = $hitbox_right
+@onready var hitbox_left_collision = $hitbox_left/hitbox_left_collision
+@onready var hitbox_right_collision = $hitbox_right/hitbox_right_collision
 @onready var hurtbox : Area2D = $hurtbox
-
 @export var character : Character
 
 @export var cat_name : String
@@ -35,23 +37,30 @@ var winningPlayer = 1
 
 func _ready():
 	add_to_group("%s" % [cat_name])
-	hitbox.add_to_group("%s_hitbox" % [cat_name])
+	hitbox_left.add_to_group("%s_hitbox" % [cat_name])
+	hitbox_right.add_to_group("%s_hitbox" % [cat_name])
 	hurtbox.add_to_group("%s_hurtbox" % [cat_name])
 	
 	animated_sprite.animation_finished.connect(_on_animation_finished)
 	
 	health_bar.init_health(health)
+	
+	hitbox_left_collision.disabled = true
+	hitbox_right_collision.disabled = true
 
 func _on_animation_finished():
 	if animated_sprite.animation in ["light_attack", "heavy_attack"]:
 		attacking = false
 		hit_box_active = false
-		hitbox.position.x = 0
+		#hitbox.position.x = 0
 		
 		if velocity == Vector2.ZERO:
 			animated_sprite.play("idle")
 		else:
 			animated_sprite.play("walking")
+		
+		hitbox_left_collision.disabled = true
+		hitbox_right_collision.disabled = true
 
 #dash mechanic
 func dash():
@@ -105,7 +114,11 @@ func _physics_process(delta):
 		hit_box_active = true
 		attack_damage = light_attack_dmg
 		velocity.x = 0
-		hitbox.position.x = 40 * facing_direction 
+		if facing_direction == -1:
+			hitbox_left_collision.disabled = false
+		else:
+			hitbox_right_collision.disabled = false
+		
 		animated_sprite.play("light_attack")
 	
 	if Input.is_action_just_pressed("p%s_heavy_attack" % [player_number]) and not attacking:
@@ -113,8 +126,12 @@ func _physics_process(delta):
 		hit_box_active = true
 		attack_damage = heavy_attack_dmg
 		velocity.x = 0
-		hitbox.position.x = 50 * facing_direction 
+		if facing_direction == -1:
+			hitbox_left_collision.disabled = false
+		else:
+			hitbox_right_collision.disabled = false
 		animated_sprite.play("heavy_attack")
+	
 	
 	dash()
 	get_input()
@@ -122,7 +139,7 @@ func _physics_process(delta):
 
 
 func _on_hitbox_area_entered(area: Area2D):
-	if area.owner == self:
+	if area.get_parent() == self:
 		return
 	
 	if not hit_box_active:
@@ -131,19 +148,22 @@ func _on_hitbox_area_entered(area: Area2D):
 	var opponent_name = area.owner.cat_name
 	
 	if area.is_in_group("%s_hurtbox" % opponent_name):
-		var opponent = area.owner
-		opponent.take_damage(attack_damage)
+		var opponent = area.get_parent()
+		if opponent != self:
+			opponent.take_damage(attack_damage)
+		
 
 func _on_hurtbox_area_entered(area: Area2D):
-	if area.owner == self:
+	if area.get_parent() == self:
 		return
 		
 	var opponent_name = area.owner.cat_name
 	if area.is_in_group("%s_hitbox" % opponent_name):
-		if not area.owner.hit_box_active:
-			return
+		var attacker = area.get_parent()
 		
-		take_damage(area.owner.attack_damage)
+		if attacker != self:
+			if attacker.hit_box_active:
+				take_damage(area.owner.attack_damage)
 
 
 func take_damage(damage : int):

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://qu1o32xys518"]
 
-[ext_resource type="Texture2D" uid="uid://bn8pdhcdu2sh4" path="res://Sprites/Player/sofiCat/light_attack/SofiCat_s1.png" id="1_ohu2k"]
+[ext_resource type="Texture2D" uid="uid://lnpopvvmi0bp" path="res://Sprites/Player/nerdCat/nerdCat.png" id="1_c6bax"]
 
 [sub_resource type="Theme" id="Theme_1fs3a"]
 
@@ -54,10 +54,11 @@ color = Color(0.8278012, 0.6931796, 0.82835, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_left = 559.0
+offset_left = 542.81995
 offset_top = 34.0
-offset_right = 672.0
+offset_right = 655.81995
 offset_bottom = 181.0
-texture = ExtResource("1_ohu2k")
+scale = Vector2(1.3199999, 1)
+texture = ExtResource("1_c6bax")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true

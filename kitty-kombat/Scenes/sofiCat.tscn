@@ -84,6 +84,7 @@ size = Vector2(663.65704, 1038.9487)
 size = Vector2(158, 445)
 
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["sofiCat", "sofiCat_hitbox", "sofiCat_hurtBox"]]
+scale = Vector2(0.7229543, 0.6772875)
 script = ExtResource("1_kyqiw")
 cat_name = "sofiCat"
 
@@ -98,13 +99,21 @@ position = Vector2(242.50002, 310.5)
 scale = Vector2(0.42341143, 0.4456427)
 shape = SubResource("RectangleShape2D_m5u0c")
 
-[node name="hitbox" type="Area2D" parent="."]
+[node name="hitbox_left" type="Area2D" parent="."]
 collision_layer = 4
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+[node name="hitbox_left_collision" type="CollisionShape2D" parent="hitbox_left"]
 position = Vector2(20, 319)
 shape = SubResource("RectangleShape2D_pjy50")
+
+[node name="visual_hitbox" type="ColorRect" parent="hitbox_left"]
+offset_left = -60.0
+offset_top = 96.0
+offset_right = 98.0
+offset_bottom = 540.0
+color = Color(0.7529412, 0.2901961, 0.25490198, 0.75686276)
+metadata/_edit_use_anchors_ = true
 
 [node name="hurtbox" type="Area2D" parent="." groups=["sofiCat_hurtBox"]]
 collision_layer = 2
@@ -115,5 +124,23 @@ position = Vector2(242.50002, 310.5)
 scale = Vector2(0.42341143, 0.4456427)
 shape = SubResource("RectangleShape2D_m5u0c")
 
-[connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]
+[node name="hitbox_right" type="Area2D" parent="."]
+position = Vector2(446.7779, 1.4764777)
+collision_layer = 4
+collision_mask = 2
+
+[node name="hitbox_right_collision" type="CollisionShape2D" parent="hitbox_right"]
+position = Vector2(20, 319)
+shape = SubResource("RectangleShape2D_pjy50")
+
+[node name="visual_hitbox" type="ColorRect" parent="hitbox_right"]
+offset_left = -60.0
+offset_top = 96.0
+offset_right = 98.0
+offset_bottom = 540.0
+color = Color(0.7529412, 0.2901961, 0.25490198, 0.75686276)
+metadata/_edit_use_anchors_ = true
+
+[connection signal="area_entered" from="hitbox_left" to="." method="_on_hitbox_area_entered"]
 [connection signal="area_entered" from="hurtbox" to="." method="_on_hurtbox_area_entered"]
+[connection signal="area_entered" from="hitbox_right" to="." method="_on_hitbox_area_entered"]
