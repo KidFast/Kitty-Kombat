@@ -9,14 +9,18 @@ var playerWin = false
 #Before i forget I will write down the point of thise
 #When a player wins this will have a player win condition that will go true if a player won
 func _ready() -> void:
-	var p1_char : Resource = GameData.p1_character
-	var p2_char : Resource = GameData.p2_character
+	var p1_char : Character = GameData.p1_character
+	var p2_char : Character = GameData.p2_character
 	
-	var p1_scene = load(p1_char.scene_path)
-	var p2_scene = load(p2_char.scene_path)
 	
-	var p1_instance = p1_scene.instantiate()
-	p1_instance.global_position
+	var p1_instance = p1_char.cat.instantiate()
+	p1_instance.global_position = spawn_p1
+	add_child(p1_instance)
+	
+	var p2_instance = p2_char.cat.instantiate()
+	p2_instance.global_position = spawn_p2
+	add_child(p1_instance)
+	
 	endGame()
 	
 
