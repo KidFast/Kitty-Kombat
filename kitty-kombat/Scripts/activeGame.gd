@@ -3,6 +3,8 @@ extends Node2D
 
 var playerWin = false
 
+@onready var spawn_p1 = Vector2(485, 492)
+@onready var spawn_p2 = Vector2(1237, 641)
 
 #Before i forget I will write down the point of thise
 #When a player wins this will have a player win condition that will go true if a player won
@@ -12,6 +14,9 @@ func _ready() -> void:
 	
 	var p1_scene = load(p1_char.scene_path)
 	var p2_scene = load(p2_char.scene_path)
+	
+	var p1_instance = p1_scene.instantiate()
+	p1_instance.global_position
 	endGame()
 	
 
