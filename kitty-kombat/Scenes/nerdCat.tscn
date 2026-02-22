@@ -237,6 +237,7 @@ position = Vector2(-119, 10)
 shape = SubResource("RectangleShape2D_3eoib")
 
 [node name="visual_hitbox" type="ColorRect" parent="hitbox_left"]
+visible = false
 offset_left = -152.0
 offset_top = -77.0
 offset_right = -85.0
@@ -263,6 +264,7 @@ position = Vector2(-119, 10)
 shape = SubResource("RectangleShape2D_3eoib")
 
 [node name="visual_hitbox" type="ColorRect" parent="hitbox_right"]
+visible = false
 offset_left = -152.0
 offset_top = -77.0
 offset_right = -85.0

@@ -14,23 +14,13 @@ theme = SubResource("Theme_1fs3a")
 color = Color(0.89411765, 0.8509804, 0.84705883, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="health_label" type="Label" parent="."]
-offset_left = 20.0
-offset_top = 104.0
-offset_right = 133.0
-offset_bottom = 149.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 30
-text = "Health"
-metadata/_edit_use_anchors_ = true
-
 [node name="sofiCat_label" type="Label" parent="."]
-offset_left = 17.0
-offset_top = 6.0
-offset_right = 255.0
-offset_bottom = 96.0
+offset_left = 83.0
+offset_top = 31.0
+offset_right = 450.0
+offset_bottom = 168.0
 theme_override_colors/font_color = Color(0.71210915, 0.21447513, 0.39120293, 1)
-theme_override_font_sizes/font_size = 65
+theme_override_font_sizes/font_size = 100
 text = "Sofi Cat"
 metadata/_edit_use_anchors_ = true
 

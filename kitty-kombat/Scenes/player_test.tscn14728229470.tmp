@@ -54,12 +54,11 @@ scale = Vector2(0.7426364, 0.7675343)
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -119.84338
-offset_top = -145.92178
-offset_right = 336.15662
-offset_bottom = -99.92178
+offset_left = -215.4487
+offset_top = -208.45975
+offset_right = 240.5513
+offset_bottom = -162.45975
 grow_horizontal = 0
-scale = Vector2(0.5792786, 0.6216761)
 
 [node name="sofiCat" parent="." instance=ExtResource("1_xjjte")]
 position = Vector2(485, 491.99997)
@@ -71,11 +70,11 @@ anchor_left = -0.087678164
 anchor_top = -0.021296296
 anchor_right = -0.087678164
 anchor_bottom = -0.021296296
-offset_left = 25.871128
-offset_top = -18.24018
-offset_right = 481.87115
-offset_bottom = 27.75982
-scale = Vector2(1.0128348, 1.2922025)
+offset_left = -145.81927
+offset_top = -114.652725
+offset_right = 310.18073
+offset_bottom = -68.652725
+scale = Vector2(1.7486048, 2.0270064)
 
 [node name="health_bar_UI_sofi" parent="." instance=ExtResource("4_yi8xp")]
 position = Vector2(-3.0517578e-05, -3.0517578e-05)
