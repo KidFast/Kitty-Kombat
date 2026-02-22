@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://ca1p7ngmt8e4c"]
+[gd_scene load_steps=8 format=3 uid="uid://ca1p7ngmt8e4c"]
 
 [ext_resource type="PackedScene" uid="uid://bg2v1w0i8he7p" path="res://Scenes/nerdCat.tscn" id="1_70u62"]
+[ext_resource type="Texture2D" uid="uid://ds5m77sv0n2ih" path="res://Assets/Background/stage_1.png" id="1_wix4t"]
 [ext_resource type="PackedScene" uid="uid://blhb0uvwniq2g" path="res://Scenes/sofiCat.tscn" id="1_xjjte"]
 [ext_resource type="PackedScene" uid="uid://qu1o32xys518" path="res://Scenes/nerdCat_health_UI.tscn" id="3_70u62"]
 [ext_resource type="PackedScene" uid="uid://boe5btpjudc8r" path="res://Scenes/new_health_bar.tscn" id="3_yi8xp"]
@@ -10,6 +11,13 @@
 size = Vector2(1025.2399, 599.097)
 
 [node name="Node2D" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -2.0
+offset_top = 2.0
+offset_right = 1918.0
+offset_bottom = 1212.0
+texture = ExtResource("1_wix4t")
 
 [node name="platform" type="StaticBody2D" parent="."]
 position = Vector2(383, 733)
