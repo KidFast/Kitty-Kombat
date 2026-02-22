@@ -1,6 +1,6 @@
 extends Control
 
-var characters = ["nerdCat", "sofiCat"]
+@export var characters = ["nerdCat", "sofiCat"]
 
 var p1_selection := 0
 var p2_selection := 0
@@ -64,6 +64,7 @@ func _process(delta):
 			update_visuals()
 			
 	if p1_confirmed and p2_confirmed:
+		await get_tree().create_timer(2.0).timeout
 		start_game()
 		
 func update_visuals():
