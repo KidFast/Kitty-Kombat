@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://ca1p7ngmt8e4c"]
+[gd_scene load_steps=9 format=3 uid="uid://ca1p7ngmt8e4c"]
 
 [ext_resource type="PackedScene" uid="uid://bg2v1w0i8he7p" path="res://Scenes/nerdCat.tscn" id="1_70u62"]
 [ext_resource type="Texture2D" uid="uid://ds5m77sv0n2ih" path="res://Assets/Background/stage_1.png" id="1_wix4t"]
 [ext_resource type="PackedScene" uid="uid://blhb0uvwniq2g" path="res://Scenes/sofiCat.tscn" id="1_xjjte"]
+[ext_resource type="Script" uid="uid://dccst1gpoxhas" path="res://Scripts/activeGame.gd" id="2_5n1oj"]
 [ext_resource type="PackedScene" uid="uid://qu1o32xys518" path="res://Scenes/nerdCat_health_UI.tscn" id="3_70u62"]
 [ext_resource type="PackedScene" uid="uid://boe5btpjudc8r" path="res://Scenes/new_health_bar.tscn" id="3_yi8xp"]
 [ext_resource type="PackedScene" uid="uid://2454jqk4lto5" path="res://Scenes/sofiCat_health_UI.tscn" id="4_yi8xp"]
@@ -11,6 +12,7 @@
 size = Vector2(1025.2399, 599.097)
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("2_5n1oj")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = -2.0
@@ -27,11 +29,23 @@ position = Vector2(575, 263.5)
 scale = Vector2(1.8727325, -0.2887679)
 shape = SubResource("RectangleShape2D_xjjte")
 
-[node name="ColorRect" type="ColorRect" parent="platform"]
-offset_left = -384.0
-offset_top = 178.0
-offset_right = 1532.0
-offset_bottom = 350.0
+[node name="leftwall" type="StaticBody2D" parent="."]
+position = Vector2(176.00003, 61.999992)
+rotation = 1.5749938
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="leftwall"]
+position = Vector2(575, 263.5)
+scale = Vector2(1.8727325, -0.2887679)
+shape = SubResource("RectangleShape2D_xjjte")
+
+[node name="rightwall" type="StaticBody2D" parent="."]
+position = Vector2(2269.9998, 168)
+rotation = 1.5749769
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rightwall"]
+position = Vector2(575, 263.5)
+scale = Vector2(1.8727325, -0.2887679)
+shape = SubResource("RectangleShape2D_xjjte")
 
 [node name="NerdCat" parent="." instance=ExtResource("1_70u62")]
 position = Vector2(1237, 641)
