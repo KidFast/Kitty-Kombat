@@ -28,6 +28,8 @@ var light_attack_dmg = 5
 var heavy_attack_dmg = 15
 var hit_box_active = false
 
+var winningPlayer = 1
+
 func _ready():
 	add_to_group("%s" % [cat_name])
 	hitbox.add_to_group("%s_hitbox" % [cat_name])
@@ -146,3 +148,14 @@ func _on_hurtbox_area_entered(area: Area2D):
 func take_damage(damage : int):
 	health -= damage
 	health_bar.health = health
+	checkHealth()
+
+#Win con thinking right now. If the current player health is 0 then they lose and the winner is the other player
+func checkHealth():
+	if health <= 0 and winningPlayer == 1:
+		winningPlayer = 1
+		get_tree().change_scene_to_file("res://Scenes/win_screen.tscn")
+	elif health <= 0 and winningPlayer == 2:
+		winningPlayer = 2
+		get_tree().change_scene_to_file("res://Scenes/win_screen.tscn")
+		
