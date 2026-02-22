@@ -210,8 +210,10 @@ size = Vector2(184, 200)
 size = Vector2(67, 173)
 
 [node name="NerdCat" type="CharacterBody2D" groups=["nerdCat", "nerdCat_hitbox", "nerdCat_hurtbox"]]
+position = Vector2(-0.9999999, 0)
 scale = Vector2(1.8400021, 1.8799996)
 script = ExtResource("1_ftelq")
+player_number = 2
 cat_name = "nerdCat"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

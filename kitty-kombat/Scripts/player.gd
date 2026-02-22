@@ -41,8 +41,6 @@ func _ready():
 	hitbox_right.add_to_group("%s_hitbox" % [cat_name])
 	hurtbox.add_to_group("%s_hurtbox" % [cat_name])
 	
-	health_bar.top_level = true
-	
 	animated_sprite.animation_finished.connect(_on_animation_finished)
 	
 	health_bar.init_health(health)

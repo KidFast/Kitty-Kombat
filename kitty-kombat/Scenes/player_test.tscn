@@ -49,7 +49,6 @@ shape = SubResource("RectangleShape2D_xjjte")
 [node name="nerdCat" parent="." instance=ExtResource("1_70u62")]
 position = Vector2(1237, 641)
 scale = Vector2(0.7426364, 0.7675343)
-cat_name = ""
 
 [node name="health_bar_UI" parent="nerdCat" instance=ExtResource("3_70u62")]
 position = Vector2(155.89893, -835.14185)
