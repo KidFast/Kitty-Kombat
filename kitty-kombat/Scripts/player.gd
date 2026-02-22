@@ -41,6 +41,8 @@ func _ready():
 	hitbox_right.add_to_group("%s_hitbox" % [cat_name])
 	hurtbox.add_to_group("%s_hurtbox" % [cat_name])
 	
+	health_bar.top_level = true
+	
 	animated_sprite.animation_finished.connect(_on_animation_finished)
 	
 	health_bar.init_health(health)
@@ -176,5 +178,7 @@ func take_damage(damage : int):
 func checkHealth():
 	if health == 0:
 		win_status = 0
-		get_tree().change_scene_to_file("res://Scenes/win_screen.tscn")
-	return
+		call_deferred("_change_to_win_screen")
+
+func _change_to_win_screen():
+	get_tree().change_scene_to_file("res://Scenes/win_screen.tscn")

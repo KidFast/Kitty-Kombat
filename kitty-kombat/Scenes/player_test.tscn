@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://ca1p7ngmt8e4c"]
+[gd_scene load_steps=8 format=3 uid="uid://ca1p7ngmt8e4c"]
 
 [ext_resource type="PackedScene" uid="uid://bg2v1w0i8he7p" path="res://Scenes/nerdCat.tscn" id="1_70u62"]
 [ext_resource type="Texture2D" uid="uid://ds5m77sv0n2ih" path="res://Assets/Background/stage_1.png" id="1_wix4t"]
 [ext_resource type="PackedScene" uid="uid://blhb0uvwniq2g" path="res://Scenes/sofiCat.tscn" id="1_xjjte"]
-[ext_resource type="Script" uid="uid://dccst1gpoxhas" path="res://Scripts/activeGame.gd" id="2_5n1oj"]
 [ext_resource type="PackedScene" uid="uid://qu1o32xys518" path="res://Scenes/nerdCat_health_UI.tscn" id="3_70u62"]
 [ext_resource type="PackedScene" uid="uid://boe5btpjudc8r" path="res://Scenes/health_bar.tscn" id="3_yi8xp"]
 [ext_resource type="PackedScene" uid="uid://2454jqk4lto5" path="res://Scenes/sofiCat_health_UI.tscn" id="4_yi8xp"]
@@ -12,7 +11,6 @@
 size = Vector2(1025.2399, 599.097)
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("2_5n1oj")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 z_index = -1
@@ -51,7 +49,7 @@ shape = SubResource("RectangleShape2D_xjjte")
 [node name="nerdCat" parent="." instance=ExtResource("1_70u62")]
 position = Vector2(1237, 641)
 scale = Vector2(0.7426364, 0.7675343)
-player_number = 2
+cat_name = ""
 
 [node name="health_bar_UI" parent="nerdCat" instance=ExtResource("3_70u62")]
 position = Vector2(155.89893, -835.14185)
@@ -66,7 +64,6 @@ offset_bottom = -641.9171
 [node name="sofiCat" parent="." instance=ExtResource("1_xjjte")]
 position = Vector2(485, 491.99997)
 scale = Vector2(0.4251839, 0.38376716)
-player_number = 1
 
 [node name="health_bar_UI" parent="sofiCat" instance=ExtResource("4_yi8xp")]
 position = Vector2(-1140.6829, -1282.0272)

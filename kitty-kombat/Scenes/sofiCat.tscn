@@ -86,7 +86,6 @@ size = Vector2(158, 445)
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["sofiCat", "sofiCat_hitbox", "sofiCat_hurtBox"]]
 scale = Vector2(0.7229543, 0.6772875)
 script = ExtResource("1_kyqiw")
-cat_name = "sofiCat"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(240, 308.5)

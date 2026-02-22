@@ -1,0 +1,96 @@
+[gd_scene load_steps=3 format=3 uid="uid://lg6pamj7bi8r"]
+
+[ext_resource type="Script" uid="uid://c43uacdgsqso7" path="res://Scenes/hearts.gd" id="1_0wlvp"]
+[ext_resource type="Texture2D" uid="uid://d30ige5keogxx" path="res://Sprites/healthBar/full_heart.png" id="1_17tlr"]
+
+[node name="Hearts" type="Node2D"]
+script = ExtResource("1_0wlvp")
+
+[node name="group1" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="heart1" type="TextureRect" parent="group1"]
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 400.0
+scale = Vector2(0.094185375, 0.09789773)
+texture = ExtResource("1_17tlr")
+
+[node name="heart2" type="TextureRect" parent="group1"]
+layout_mode = 0
+offset_left = 34.0
+offset_right = 434.0
+offset_bottom = 400.0
+scale = Vector2(0.094185375, 0.09789773)
+texture = ExtResource("1_17tlr")
+
+[node name="heart3" type="TextureRect" parent="group1"]
+layout_mode = 0
+offset_left = 68.0
+offset_right = 468.0
+offset_bottom = 400.0
+scale = Vector2(0.094185375, 0.09789773)
+texture = ExtResource("1_17tlr")
+
+[node name="group2" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="heart4" type="TextureRect" parent="group2"]
+layout_mode = 0
+offset_left = 102.0
+offset_right = 502.0
+offset_bottom = 400.0
+scale = Vector2(0.094185375, 0.09789773)
+texture = ExtResource("1_17tlr")
+
+[node name="heart5" type="TextureRect" parent="group2"]
+layout_mode = 0
+offset_left = 136.0
+offset_right = 536.0
+offset_bottom = 400.0
+scale = Vector2(0.094185375, 0.09789773)
+texture = ExtResource("1_17tlr")
+
+[node name="heart6" type="TextureRect" parent="group2"]
+layout_mode = 0
+offset_left = 170.0
+offset_right = 570.0
+offset_bottom = 400.0
+scale = Vector2(0.094185375, 0.09789773)
+texture = ExtResource("1_17tlr")
+
+[node name="group3" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="heart7" type="TextureRect" parent="group3"]
+layout_mode = 0
+offset_left = 204.0
+offset_right = 604.0
+offset_bottom = 400.0
+scale = Vector2(0.094185375, 0.09789773)
+texture = ExtResource("1_17tlr")
+
+[node name="heart8" type="TextureRect" parent="group3"]
+layout_mode = 0
+offset_left = 238.0
+offset_right = 638.0
+offset_bottom = 400.0
+scale = Vector2(0.094185375, 0.09789773)
+texture = ExtResource("1_17tlr")
+
+[node name="heart9" type="TextureRect" parent="group3"]
+layout_mode = 0
+offset_left = 272.0
+offset_right = 672.0
+offset_bottom = 400.0
+scale = Vector2(0.094185375, 0.09789773)
+texture = ExtResource("1_17tlr")
