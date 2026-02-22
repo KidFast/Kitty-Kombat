@@ -54,11 +54,10 @@ func _process(delta):
 			p2_confirmed = true
 			update_visuals()
 		elif Input.is_action_just_pressed("p2_heavy_attack"):
-			p2_confirmed = false
 			update_visuals()
 	else:
 		if Input.is_action_just_pressed("p1_heavy_attack"):
-			p1_confirmed = false
+			p2_confirmed = false
 			update_visuals()
 			
 	if p1_confirmed and p2_confirmed:
