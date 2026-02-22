@@ -179,4 +179,4 @@ func checkHealth():
 		call_deferred("_change_to_win_screen")
 
 func _change_to_win_screen():
-	get_tree().change_scene_to_file("res://Scenes/win_screen.tscn")
+	$"../WinScreen".visible = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ca1p7ngmt8e4c"]
+[gd_scene load_steps=9 format=3 uid="uid://ca1p7ngmt8e4c"]
 
 [ext_resource type="PackedScene" uid="uid://bg2v1w0i8he7p" path="res://Scenes/nerdCat.tscn" id="1_70u62"]
 [ext_resource type="Texture2D" uid="uid://ds5m77sv0n2ih" path="res://Assets/Background/stage_1.png" id="1_wix4t"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://qu1o32xys518" path="res://Scenes/nerdCat_health_UI.tscn" id="3_70u62"]
 [ext_resource type="PackedScene" uid="uid://boe5btpjudc8r" path="res://Scenes/health_bar.tscn" id="3_yi8xp"]
 [ext_resource type="PackedScene" uid="uid://2454jqk4lto5" path="res://Scenes/sofiCat_health_UI.tscn" id="4_yi8xp"]
+[ext_resource type="PackedScene" uid="uid://d2qqd3eqtpy8w" path="res://Scenes/win_screen.tscn" id="7_5n1oj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xjjte"]
 size = Vector2(1025.2399, 599.097)
@@ -84,3 +85,6 @@ scale = Vector2(1.0354137, 1.1089705)
 [node name="health_bar_UI_nerd" parent="." instance=ExtResource("3_70u62")]
 position = Vector2(1131.9998, 0)
 scale = Vector2(1.0323063, 1.1453032)
+
+[node name="WinScreen" parent="." instance=ExtResource("7_5n1oj")]
+visible = false
