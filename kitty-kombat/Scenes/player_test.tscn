@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://ca1p7ngmt8e4c"]
+[gd_scene load_steps=9 format=3 uid="uid://ca1p7ngmt8e4c"]
 
 [ext_resource type="PackedScene" uid="uid://bg2v1w0i8he7p" path="res://Scenes/nerdCat.tscn" id="1_70u62"]
 [ext_resource type="Texture2D" uid="uid://ds5m77sv0n2ih" path="res://Assets/Background/stage_1.png" id="1_wix4t"]
 [ext_resource type="PackedScene" uid="uid://blhb0uvwniq2g" path="res://Scenes/sofiCat.tscn" id="1_xjjte"]
 [ext_resource type="Script" uid="uid://dccst1gpoxhas" path="res://Scripts/activeGame.gd" id="2_5n1oj"]
 [ext_resource type="PackedScene" uid="uid://qu1o32xys518" path="res://Scenes/nerdCat_health_UI.tscn" id="3_70u62"]
+[ext_resource type="PackedScene" uid="uid://boe5btpjudc8r" path="res://Scenes/health_bar.tscn" id="3_yi8xp"]
 [ext_resource type="PackedScene" uid="uid://2454jqk4lto5" path="res://Scenes/sofiCat_health_UI.tscn" id="4_yi8xp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xjjte"]
@@ -48,7 +49,6 @@ scale = Vector2(1.8727325, -0.2887679)
 shape = SubResource("RectangleShape2D_xjjte")
 
 [node name="nerdCat" parent="." instance=ExtResource("1_70u62")]
-visible = false
 position = Vector2(1237, 641)
 scale = Vector2(0.7426364, 0.7675343)
 player_number = 2
@@ -57,25 +57,13 @@ player_number = 2
 position = Vector2(155.89893, -835.14185)
 metadata/_edit_lock_ = true
 
-[node name="health_bar" parent="nerdCat"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-offset_left = 177.40216
+[node name="health_bar" parent="nerdCat" instance=ExtResource("3_yi8xp")]
+offset_left = 177.74515
 offset_top = -687.9171
-offset_right = 633.4021
+offset_right = 633.7451
 offset_bottom = -641.9171
-script = null
-metadata/_edit_lock_ = true
 
 [node name="sofiCat" parent="." instance=ExtResource("1_xjjte")]
-visible = false
 position = Vector2(485, 491.99997)
 scale = Vector2(0.4251839, 0.38376716)
 player_number = 1
@@ -85,20 +73,9 @@ position = Vector2(-1140.6829, -1282.0272)
 scale = Vector2(1.7457625, 2.0000288)
 metadata/_edit_lock_ = true
 
-[node name="health_bar" parent="sofiCat"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-offset_left = -1105.4043
-offset_top = -984.97205
-offset_right = -649.4043
-offset_bottom = -938.97205
-scale = Vector2(1.7430269, 1.9774265)
-script = null
-metadata/_edit_lock_ = true
+[node name="health_bar" parent="sofiCat" instance=ExtResource("3_yi8xp")]
+offset_left = -1105.4036
+offset_top = -990.18365
+offset_right = -649.40356
+offset_bottom = -944.18365
+scale = Vector2(1.7486048, 2.0270064)
