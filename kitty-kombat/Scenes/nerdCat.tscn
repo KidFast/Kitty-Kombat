@@ -226,20 +226,21 @@ frame_progress = 1.0
 position = Vector2(9, -3)
 shape = SubResource("RectangleShape2D_ftelq")
 
-[node name="hitbox" type="Area2D" parent="."]
+[node name="hitbox_left" type="Area2D" parent="."]
 collision_layer = 4
 collision_mask = 2
 
-[node name="hitbox_collision" type="CollisionShape2D" parent="hitbox"]
+[node name="hitbox_left_collision" type="CollisionShape2D" parent="hitbox_left"]
 position = Vector2(-119, 10)
 shape = SubResource("RectangleShape2D_3eoib")
 
-[node name="visual_hitbox" type="ColorRect" parent="hitbox"]
+[node name="visual_hitbox" type="ColorRect" parent="hitbox_left"]
 offset_left = -152.0
 offset_top = -77.0
 offset_right = -85.0
 offset_bottom = 97.0
 color = Color(0.7529412, 0.2901961, 0.25490198, 0.75686276)
+metadata/_edit_use_anchors_ = true
 
 [node name="hurtbox" type="Area2D" parent="."]
 position = Vector2(-161, -29)
@@ -249,3 +250,20 @@ collision_mask = 4
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="hurtbox"]
 position = Vector2(169, 26)
 shape = SubResource("RectangleShape2D_ftelq")
+
+[node name="hitbox_right" type="Area2D" parent="."]
+position = Vector2(255.97795, 0)
+collision_layer = 4
+collision_mask = 2
+
+[node name="hitbox_right_collision" type="CollisionShape2D" parent="hitbox_right"]
+position = Vector2(-119, 10)
+shape = SubResource("RectangleShape2D_3eoib")
+
+[node name="visual_hitbox" type="ColorRect" parent="hitbox_right"]
+offset_left = -152.0
+offset_top = -77.0
+offset_right = -85.0
+offset_bottom = 97.0
+color = Color(0.7529412, 0.2901961, 0.25490198, 0.75686276)
+metadata/_edit_use_anchors_ = true

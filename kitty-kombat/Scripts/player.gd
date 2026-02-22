@@ -3,8 +3,10 @@ extends CharacterBody2D
 @export var player_number : int
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var health_bar : ProgressBar = $health_bar
-@onready var hitbox : Area2D = $hitbox
-@onready var hitbox_collision = $hitbox/hitbox_collision
+@onready var hitbox_left : Area2D = $hitbox_left
+@onready var hitbox_right : Area2D = $hitbox_right
+@onready var hitbox_left_collision = $hitbox_left/hitbox_left_collision
+@onready var hitbox_right_collision = $hitbox_right/hitbox_right_collision
 @onready var hurtbox : Area2D = $hurtbox
 
 
@@ -35,27 +37,30 @@ var winningPlayer = 1
 
 func _ready():
 	add_to_group("%s" % [cat_name])
-	hitbox.add_to_group("%s_hitbox" % [cat_name])
+	hitbox_left.add_to_group("%s_hitbox" % [cat_name])
+	hitbox_right.add_to_group("%s_hitbox" % [cat_name])
 	hurtbox.add_to_group("%s_hurtbox" % [cat_name])
 	
 	animated_sprite.animation_finished.connect(_on_animation_finished)
 	
 	health_bar.init_health(health)
 	
-	hitbox_collision.disabled = true
+	hitbox_left_collision.disabled = true
+	hitbox_right_collision.disabled = true
 
 func _on_animation_finished():
 	if animated_sprite.animation in ["light_attack", "heavy_attack"]:
 		attacking = false
 		hit_box_active = false
-		hitbox.position.x = 0
+		#hitbox.position.x = 0
 		
 		if velocity == Vector2.ZERO:
 			animated_sprite.play("idle")
 		else:
 			animated_sprite.play("walking")
 		
-		hitbox_collision.disabled = true
+		hitbox_left_collision.disabled = true
+		hitbox_right_collision.disabled = true
 
 #dash mechanic
 func dash():
@@ -107,26 +112,24 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("p%s_light_attack" % [player_number]) and not attacking:
 		attacking = true
 		hit_box_active = true
-		hitbox_collision.disabled = false
 		attack_damage = light_attack_dmg
 		velocity.x = 0
 		if facing_direction == -1:
-			hitbox.position.x = 20 * facing_direction 
+			hitbox_left_collision.disabled = false
 		else:
-			hitbox.position.x = 20 * facing_direction + 440
+			hitbox_right_collision.disabled = false
 		
 		animated_sprite.play("light_attack")
 	
 	if Input.is_action_just_pressed("p%s_heavy_attack" % [player_number]) and not attacking:
 		attacking = true
 		hit_box_active = true
-		hitbox_collision.disabled = false
 		attack_damage = heavy_attack_dmg
 		velocity.x = 0
 		if facing_direction == -1:
-			hitbox.position.x = 30 * facing_direction 
+			hitbox_left_collision.disabled = false
 		else:
-			hitbox.position.x = 30 * facing_direction + 440
+			hitbox_right_collision.disabled = false
 		animated_sprite.play("heavy_attack")
 	
 	
