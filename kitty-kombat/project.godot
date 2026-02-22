@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Kitty-Kombat"
+run/main_scene="uid://ca1p7ngmt8e4c"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 "<<<<<<<Updatedupstream<<<<<<<HEAD[input]p1_left"={
