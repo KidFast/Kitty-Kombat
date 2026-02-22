@@ -210,6 +210,7 @@ size = Vector2(184, 200)
 size = Vector2(67, 173)
 
 [node name="NerdCat" type="CharacterBody2D" groups=["nerdCat", "nerdCat_hitbox", "nerdCat_hurtbox"]]
+scale = Vector2(1.8400021, 1.8799996)
 script = ExtResource("1_ftelq")
 cat_name = "nerdCat"
 
@@ -232,6 +233,13 @@ collision_mask = 2
 [node name="hitbox_collision" type="CollisionShape2D" parent="hitbox"]
 position = Vector2(-119, 10)
 shape = SubResource("RectangleShape2D_3eoib")
+
+[node name="visual_hitbox" type="ColorRect" parent="hitbox"]
+offset_left = -152.0
+offset_top = -77.0
+offset_right = -85.0
+offset_bottom = 97.0
+color = Color(0.7529412, 0.2901961, 0.25490198, 0.75686276)
 
 [node name="hurtbox" type="Area2D" parent="."]
 position = Vector2(-161, -29)
