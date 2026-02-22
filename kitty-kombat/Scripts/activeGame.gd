@@ -1,11 +1,17 @@
 extends Node2D
 
+
 var playerWin = false
 
 
 #Before i forget I will write down the point of thise
 #When a player wins this will have a player win condition that will go true if a player won
 func _ready() -> void:
+	var p1_char : Resource = GameData.p1_character
+	var p2_char : Resource = GameData.p2_character
+	
+	var p1_scene = load(p1_char.scene_path)
+	var p2_scene = load(p2_char.scene_path)
 	endGame()
 	
 

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Character" load_steps=3 format=3 uid="uid://bmjddva4t6yqm"]
+
+[ext_resource type="PackedScene" uid="uid://bg2v1w0i8he7p" path="res://Scenes/nerdCat.tscn" id="1_gdmfe"]
+[ext_resource type="Script" uid="uid://c5mf7hon0ypjc" path="res://Scripts/Character.gd" id="2_we6wx"]
+
+[resource]
+script = ExtResource("2_we6wx")
+title = "NerdCat"
+cat = ExtResource("1_gdmfe")
+metadata/_custom_type_script = "uid://c5mf7hon0ypjc"

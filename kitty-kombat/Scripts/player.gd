@@ -6,7 +6,7 @@ extends CharacterBody2D
 @onready var hitbox : Area2D = $hitbox
 @onready var hurtbox : Area2D = $hurtbox
 
-
+@export var character : Character
 
 @export var cat_name : String
 var facing_direction = 1

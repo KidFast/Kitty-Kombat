@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Character" load_steps=3 format=3 uid="uid://b37l56iy5p5s8"]
+
+[ext_resource type="PackedScene" uid="uid://blhb0uvwniq2g" path="res://Scenes/sofiCat.tscn" id="1_3ttm5"]
+[ext_resource type="Script" uid="uid://c5mf7hon0ypjc" path="res://Scripts/Character.gd" id="2_omiqu"]
+
+[resource]
+script = ExtResource("2_omiqu")
+title = "sofiCat"
+cat = ExtResource("1_3ttm5")
+metadata/_custom_type_script = "uid://c5mf7hon0ypjc"

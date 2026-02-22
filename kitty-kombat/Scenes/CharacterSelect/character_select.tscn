@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://qw3swkb63er8"]
+[gd_scene load_steps=9 format=3 uid="uid://qw3swkb63er8"]
 
 [ext_resource type="FontFile" uid="uid://ccfjfp4hfprry" path="res://Assets/Font/karmatic-arcade/ka1.ttf" id="1_8sf25"]
 [ext_resource type="Script" uid="uid://drltc8wlq2cya" path="res://Scenes/CharacterSelect/playerSelect.gd" id="1_sk4ta"]
 [ext_resource type="PackedScene" uid="uid://cmkigadclkeav" path="res://Scenes/CharacterSelect/select_player_button.tscn" id="1_tf80a"]
+[ext_resource type="Resource" uid="uid://bmjddva4t6yqm" path="res://Scenes/CharacterSelect/Characters/nerdCat.tres" id="2_7tm4v"]
 [ext_resource type="Texture2D" uid="uid://vcdb8ghvv1jx" path="res://Assets/Background/menu_bg.jpg" id="2_tf80a"]
+[ext_resource type="Resource" uid="uid://b37l56iy5p5s8" path="res://Scenes/CharacterSelect/Characters/sofiCat.tres" id="3_7ltyv"]
 [ext_resource type="Texture2D" uid="uid://bn8pdhcdu2sh4" path="res://Sprites/Player/sofiCat/light_attack/SofiCat_s1.png" id="5_gchby"]
 [ext_resource type="Texture2D" uid="uid://lnpopvvmi0bp" path="res://Sprites/Player/nerdCat/nerdCat.png" id="6_qwmle"]
 
@@ -15,6 +17,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_sk4ta")
+characters = [ExtResource("2_7tm4v"), ExtResource("3_7ltyv")]
 
 [node name="NerdCatButton" type="VBoxContainer" parent="."]
 top_level = true

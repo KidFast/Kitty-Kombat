@@ -1,6 +1,7 @@
 extends Control
 
-@export var characters = ["nerdCat", "sofiCat"]
+
+@export var characters = [Character]
 
 var p1_selection := 0
 var p2_selection := 0
@@ -35,12 +36,11 @@ func _process(delta):
 			update_visuals()
 		elif Input.is_action_just_pressed("p1_heavy_attack"):
 			p1_confirmed = false
+			get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
 			update_visuals()
-		elif Input.is_action_just_pressed("p1_heavy_attack") and !p1_confirmed:
-			if p1_confirmed:
-				p1_confirmed = false
-			else:
-				get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+	else:
+		if Input.is_action_just_pressed("p1_heavy_attack"):
+			p1_confirmed = false
 			update_visuals()
 			
 	if not p2_confirmed:
@@ -56,11 +56,9 @@ func _process(delta):
 		elif Input.is_action_just_pressed("p2_heavy_attack"):
 			p2_confirmed = false
 			update_visuals()
-		elif Input.is_action_just_pressed("p2_heavy_attack") and !p2_confirmed:
-			if p2_confirmed:
-				p2_confirmed = false
-			else:
-				get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+	else:
+		if Input.is_action_just_pressed("p1_heavy_attack"):
+			p1_confirmed = false
 			update_visuals()
 			
 	if p1_confirmed and p2_confirmed:
